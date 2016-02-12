@@ -2,6 +2,7 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class Order
     {
@@ -30,7 +31,7 @@
 
         public virtual SupplyManager SupplyManager { get; set; }
 
-        public int ShoppingCartId { get; set; }
+        //public int ShoppingCartId { get; set; }
 
         public virtual ShoppingCart ShoppingCart { get; set; }
     }

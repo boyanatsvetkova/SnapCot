@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public class ProductCartItem
+    public class ProductCartItem 
     {
         [Key]
         public int Id { get; set; }
