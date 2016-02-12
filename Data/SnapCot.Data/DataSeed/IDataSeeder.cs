@@ -6,6 +6,8 @@
     {
         void SeedRoles();
 
+        void SeedUsers();
+
         void SeedData();
     }
 }

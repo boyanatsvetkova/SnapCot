@@ -28,7 +28,7 @@
 
         IDbSet<ShoppingCart> ShoppingCart { get; set; }
 
-        //IDbSet<SupplyManager> SupplyManagers { get; set; }
+        IDbSet<SupplyManager> SupplyManagers { get; set; }
 
         IDbSet<TransportMode> TransportModes { get; set; }
 

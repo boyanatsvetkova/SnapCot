@@ -16,7 +16,7 @@
         public int Id { get; set; }
 
         [Required]
-        [StringLength(5, MinimumLength = 20)]
+        [StringLength(20, MinimumLength = 5)]
         public string Mode { get; set; }
 
         public virtual ICollection<Order> Orders

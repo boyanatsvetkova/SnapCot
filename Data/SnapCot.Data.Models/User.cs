@@ -22,6 +22,10 @@
             this.comments = new HashSet<Comment>();
         }
 
+        [Required]
+        [StringLength(50, MinimumLength = 2)]
+        public string Name { get; set; }
+
         public string Avatar { get; set; }
 
         public DateTime RegistrationDate { get; set; }
@@ -30,14 +34,14 @@
         public decimal? CreditLimit { get; set; }
 
         [Required]
-        [StringLength(2, MinimumLength = 80)]
-        public string Adress { get; set; }
+        [StringLength(80, MinimumLength = 2)]
+        public string Address { get; set; }
 
         [Required]
         [MaxLength(20)]
         public string Telephone { get; set; }
 
-        public int CountryId { get; set; }
+        public int? CountryId { get; set; }
 
         public Country Country { get; set; }
 

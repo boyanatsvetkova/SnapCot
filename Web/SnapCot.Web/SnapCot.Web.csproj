@@ -297,6 +297,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\SnapCot.Common\SnapCot.Common.csproj">
+      <Project>{676255e7-ef0c-4fba-8acb-671132cf91d0}</Project>
+      <Name>SnapCot.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Data\SnapCot.Data.Models\SnapCot.Data.Models.csproj">
       <Project>{36f1028f-09f7-4b4e-a69f-2cf5b1c3ebd6}</Project>
       <Name>SnapCot.Data.Models</Name>

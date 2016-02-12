@@ -38,9 +38,9 @@
         public virtual  IDbSet<ProductCartItem> ProductCartItems { get; set; }
             
         public virtual  IDbSet<ShoppingCart> ShoppingCart { get; set; }
-             
-        //public virtual  IDbSet<SupplyManager> SupplyManagers { get; set; }
-               
+
+        public virtual IDbSet<SupplyManager> SupplyManagers { get; set; }
+
         public virtual IDbSet<TransportMode> TransportModes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
