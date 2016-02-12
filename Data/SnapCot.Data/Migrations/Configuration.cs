@@ -28,6 +28,7 @@ namespace SnapCot.Data.Migrations
             var seed = new DataSeeder(context);
             seed.SeedRoles();
             seed.SeedUsers();
+            seed.SeedData();
         }
     }
 }

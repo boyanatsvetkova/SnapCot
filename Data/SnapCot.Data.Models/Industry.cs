@@ -19,10 +19,6 @@
         [StringLength(50, MinimumLength = 3)]
         public string Name { get; set; }
 
-        public int ProductId { get; set; }
-
-        public virtual Product Product { get; set; }
-
         public virtual ICollection<Product> Products
         {
             get { return this.products; }

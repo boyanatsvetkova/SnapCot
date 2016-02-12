@@ -77,6 +77,27 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="Images\2-Butoxyethanol.jpg" />
+    <Content Include="Images\AceticAcid.jpg" />
+    <Content Include="Images\AmmoniumBisulfate.jpg" />
+    <Content Include="Images\AmmoniumChloride.jpg" />
+    <Content Include="Images\Barite.png" />
+    <Content Include="Images\Bentonite.jpg" />
+    <Content Include="Images\CalciumCarbonate.jpg" />
+    <Content Include="Images\CitricAcid.jpg" />
+    <Content Include="Images\Glutaraldehyde.jpg" />
+    <Content Include="Images\HydrochloricAcid.jpg" />
+    <Content Include="Images\PeraceticAcid.jpg" />
+    <Content Include="Images\PhosphoricAcid.jpg" />
+    <Content Include="Images\PotassiumChloride.jpg" />
+    <Content Include="Images\SodiumBicarbonate.jpg" />
+    <Content Include="Images\SodiumCarbonate.JPG" />
+    <Content Include="Images\SodiumChloride.jpg" />
+    <Content Include="Images\SodiumHydroxide.jpg" />
+    <Content Include="Images\SodiumSilicate.jpg" />
+    <Content Include="Images\Starch.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
