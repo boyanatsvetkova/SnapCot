@@ -71,6 +71,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\SnapCot.Common\SnapCot.Common.csproj">
+      <Project>{676255e7-ef0c-4fba-8acb-671132cf91d0}</Project>
+      <Name>SnapCot.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SnapCot.Data.Models\SnapCot.Data.Models.csproj">
       <Project>{36f1028f-09f7-4b4e-a69f-2cf5b1c3ebd6}</Project>
       <Name>SnapCot.Data.Models</Name>
@@ -78,25 +82,63 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Images\2-Butoxyethanol.jpg" />
-    <Content Include="Images\AceticAcid.jpg" />
-    <Content Include="Images\AmmoniumBisulfate.jpg" />
-    <Content Include="Images\AmmoniumChloride.jpg" />
-    <Content Include="Images\Barite.png" />
-    <Content Include="Images\Bentonite.jpg" />
-    <Content Include="Images\CalciumCarbonate.jpg" />
-    <Content Include="Images\CitricAcid.jpg" />
-    <Content Include="Images\Glutaraldehyde.jpg" />
-    <Content Include="Images\HydrochloricAcid.jpg" />
-    <Content Include="Images\PeraceticAcid.jpg" />
-    <Content Include="Images\PhosphoricAcid.jpg" />
-    <Content Include="Images\PotassiumChloride.jpg" />
-    <Content Include="Images\SodiumBicarbonate.jpg" />
-    <Content Include="Images\SodiumCarbonate.JPG" />
-    <Content Include="Images\SodiumChloride.jpg" />
-    <Content Include="Images\SodiumHydroxide.jpg" />
-    <Content Include="Images\SodiumSilicate.jpg" />
-    <Content Include="Images\Starch.jpg" />
+    <Content Include="Images\2-Butoxyethanol.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AceticAcid.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AmmoniumBisulfate.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\AmmoniumChloride.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Barite.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Bentonite.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\CalciumCarbonate.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\CitricAcid.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Glutaraldehyde.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\HydrochloricAcid.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\PeraceticAcid.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\PhosphoricAcid.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\PotassiumChloride.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\SodiumBicarbonate.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\SodiumCarbonate.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\SodiumChloride.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\SodiumHydroxide.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\SodiumSilicate.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Starch.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

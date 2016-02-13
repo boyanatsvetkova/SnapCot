@@ -63,7 +63,9 @@
     <Compile Include="Image.cs" />
     <Compile Include="Industry.cs" />
     <Compile Include="Order.cs" />
-    <Compile Include="Producer.cs" />
+    <Compile Include="Producer.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="ProductCartItem.cs" />
     <Compile Include="ProductType.cs" />
