@@ -416,7 +416,7 @@
                     products[i].ProducerId = producers[generator.Next(0, producers.Count())].Id;
                     products[i].HazardClassificationId = classifications[generator.Next(0, classifications.Count())].Id;
                     products[i].Industries.Add(industryType[generator.Next(0, industryType.Count())]);
-                    products[i].Picture = images[i];
+                    products[i].Image = images[i];
 
                     this.context.Products.Add(products[i]);
                 }
