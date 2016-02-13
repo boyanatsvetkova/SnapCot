@@ -1,2 +1,2 @@
 # SnapCot
-ASP.NET MVC 5 Project
+Final Teleric Academy ASP.NET MVC 5 Project
