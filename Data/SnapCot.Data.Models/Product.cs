@@ -30,11 +30,13 @@
 
         public decimal Quantity { get; set; }
 
-        public Image Picture { get; set; }
-
         public ProductType ProductType { get; set; }
 
         public DateTime DateAdded { get; set; }
+
+        public int? ImageId { get; set; }
+
+        public virtual Image Image { get; set; }
 
         public int ProducerId { get; set; }
 

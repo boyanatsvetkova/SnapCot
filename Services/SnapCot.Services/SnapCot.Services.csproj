@@ -40,9 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IImageService.cs" />
+    <Compile Include="Contracts\IProductService.cs" />
+    <Compile Include="ImageService.cs" />
+    <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\SnapCot.Common\SnapCot.Common.csproj">
+      <Project>{676255e7-ef0c-4fba-8acb-671132cf91d0}</Project>
+      <Name>SnapCot.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Data\SnapCot.Data.Models\SnapCot.Data.Models.csproj">
       <Project>{36f1028f-09f7-4b4e-a69f-2cf5b1c3ebd6}</Project>
       <Name>SnapCot.Data.Models</Name>
@@ -52,9 +60,7 @@
       <Name>SnapCot.Data</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Contracts\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
