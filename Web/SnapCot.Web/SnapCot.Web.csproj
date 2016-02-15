@@ -232,6 +232,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Paging\PaginationViewModel.cs" />
+    <Compile Include="ViewModels\ProducerViewModels\ProducerViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModels\AllPagedProductsViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModels\AllProductsViewModel.cs" />
   </ItemGroup>

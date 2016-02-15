@@ -5,6 +5,7 @@
     using SnapCot.Services.Contracts;
     using SnapCot.Data.Repositories;
     using Common;
+    using System;
 
     public class ProductService : IProductService
     {
@@ -15,18 +16,41 @@
             this.products = products;
         }
 
-        public int CountProducts()
+        public IQueryable<Product> All(int page, int producerId, string searchString, string orderByPrice)
         {
-            return this.products.All().Count();
+            var products = this.products
+                .All()
+                .Where(p => producerId != 0 ? p.ProducerId == producerId : p.ProducerId == p.ProducerId)
+                .Where(p => string.IsNullOrEmpty(searchString) || p.Name.Contains(searchString));
+
+            if (orderByPrice == "desc")
+            {
+                return products.OrderByDescending(p => p.Price)
+                    .Skip((page - 1) * GlobalConstants.DefaultPageSize)
+                    .Take(GlobalConstants.DefaultPageSize);
+            }
+
+            return products.OrderBy(p => p.Price)
+                   .Skip((page - 1) * GlobalConstants.DefaultPageSize)
+                   .Take(GlobalConstants.DefaultPageSize);
+
         }
 
-        public IQueryable<Product> All(int page = GlobalConstants.DefaultPage)
+        public int CountProducts(string searchString)
         {
             return this.products
                 .All()
-                .OrderByDescending(p => p.Price)
-                .Skip((page - 1) * GlobalConstants.DefaultPageSize)
-                .Take(GlobalConstants.DefaultPageSize);
+                .Where(p => string.IsNullOrEmpty(searchString) || p.Name.Contains(searchString))
+                .Count();
+        }
+
+        public int CountProductsByProducer(int producerId, string searchString)
+        {
+            return this.products
+                .All()
+                .Where(p => p.ProducerId == producerId)
+                .Where(p => string.IsNullOrEmpty(searchString) || p.Name.Contains(searchString))
+                .Count();
         }
     }
 }

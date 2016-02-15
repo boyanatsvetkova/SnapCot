@@ -5,8 +5,10 @@
 
     public interface IProductService
     {
-        int CountProducts();
+        int CountProducts(string searchString);
 
-        IQueryable<Product> All(int page);
+        int CountProductsByProducer(int producerId, string searchString);
+
+        IQueryable<Product> All(int page, int producerId, string searchString, string orderByPrice);
     }
 }
