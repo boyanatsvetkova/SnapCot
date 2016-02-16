@@ -46,6 +46,16 @@
                 productModel.Value));
         }
 
+        public ActionResult Details(int id)
+        {
+            var detailedProduct = this.products
+                .GetProdcutById(id)
+                .To<DetailedProductViewModel>()
+                .FirstOrDefault();
+
+            return View(detailedProduct);
+        }
+
         private AllPagedProductsViewModel GetModel(int page,
                                                    int producerId,
                                                    string searchString,

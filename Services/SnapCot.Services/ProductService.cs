@@ -52,5 +52,12 @@
                 .Where(p => string.IsNullOrEmpty(searchString) || p.Name.Contains(searchString))
                 .Count();
         }
+
+        public IQueryable<Product> GetProdcutById(int id)
+        {
+            return this.products
+                .All()
+                .Where(p => p.Id == id);
+        }
     }
 }

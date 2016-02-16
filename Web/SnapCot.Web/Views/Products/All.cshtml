@@ -50,6 +50,7 @@
                 <th class=text-center>Producer</th>
                 <th class=text-center>Type</th>
                 <th class=text-center>Classification</th>
+                <th></th>
             </tr>
             @foreach (var item in Model.Products)
             {
@@ -62,6 +63,7 @@
                     <td class="text-center item">@Html.DisplayFor(m => item.Producer)</td>
                     <td class="text-center item">@Html.DisplayFor(m => item.Type)</td>
                     <td class="text-center item">@Html.DisplayFor(m => item.Classification)</td>
+                    <td>@Html.ActionLink("Details", "Details", "Products", new { id = item.Id}, new {@class = "btn btn-success" })</td>
                 </tr>
             }
         </table>
