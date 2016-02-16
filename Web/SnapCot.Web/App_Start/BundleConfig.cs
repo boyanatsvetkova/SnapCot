@@ -26,6 +26,9 @@ namespace SnapCot.Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/background").Include(
+                     "~/Content/background-images.css"));
         }
     }
 }

@@ -38,6 +38,7 @@
         public string Address { get; set; }
 
         [Required]
+        [MinLength(10)]
         [MaxLength(20)]
         public string Telephone { get; set; }
 

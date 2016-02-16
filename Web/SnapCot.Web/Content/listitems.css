@@ -5,3 +5,18 @@
 .item {
     vertical-align: middle;
 }
+
+.image-position{
+    width:30%;
+    float:left;
+}
+
+.image-details{
+    width:300px;
+    height:200px;
+}
+
+.text-position{
+    width:70%;
+    float:left;
+}

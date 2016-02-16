@@ -1,13 +1,47 @@
-﻿body {
+﻿body, html {
+    margin: 0;
+    height: 100%;
+    /*min-height: 100% !important;*/
+}
+
+body {
     padding-top: 50px;
+    /*padding-bottom: 20px;*/
+    color: #000;
+}
+
+hr {
+    margin: 0;
+}
+
+.div-box {
+    height: 100%;
+    display: block;
+    overflow: auto;
+}
+
+.div-box-body {
+    padding-top: 40px;
     padding-bottom: 20px;
 }
 
+    .div-box-body:after {
+        clear: both;
+    }
+
+.div-box-content {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.enlarge{
+    height:100%;
+}
+
 /* Set padding to keep content from hitting the edges */
-.body-content {
+/*.body-content {
     padding-left: 15px;
     padding-right: 15px;
-}
+}*/
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -22,3 +56,12 @@ select,
 textarea {
     max-width: 280px;
 }
+
+footer {
+    color: #000;
+    font-weight: bold;
+}
+
+    footer p {
+        margin: 10px 0;
+    }

@@ -1,0 +1,11 @@
+﻿.register-background{
+    background: url(../Images/Backgrounds/cactus-660180_960_720.jpg) #edc9af;
+}
+
+.product-details-background {
+    background: url(../Images/Backgrounds/grand-canyon-844137_1920.jpg) #edc9af;
+}
+
+.image-size{
+    background-size:cover;
+}
