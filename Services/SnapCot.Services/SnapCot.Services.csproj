@@ -44,11 +44,13 @@
     <Compile Include="Contracts\IProducerService.cs" />
     <Compile Include="Contracts\IImageService.cs" />
     <Compile Include="Contracts\IProductService.cs" />
+    <Compile Include="Contracts\IShoppingCartService.cs" />
     <Compile Include="CountryService.cs" />
     <Compile Include="ImageService.cs" />
     <Compile Include="ProducerService.cs" />
     <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShoppingCartService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Common\SnapCot.Common\SnapCot.Common.csproj">

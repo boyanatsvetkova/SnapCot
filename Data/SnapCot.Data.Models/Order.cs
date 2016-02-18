@@ -17,6 +17,8 @@
 
         public bool IsApproved { get; set; }
 
+        public bool IsActive { get; set; }
+
         public ShippingTerms ShippingTerms { get; set; }
 
         public int? TransportModeId { get; set; }

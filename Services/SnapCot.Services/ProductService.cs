@@ -59,5 +59,11 @@
                 .All()
                 .Where(p => p.Id == id);
         }
+
+        public void UpdateProductQuantity(Product product, decimal quantity)
+        {
+            product.Quantity -= quantity;
+            this.products.SaveChanges();
+        }
     }
 }

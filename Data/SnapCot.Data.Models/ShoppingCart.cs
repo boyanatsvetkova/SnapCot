@@ -2,8 +2,9 @@
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Linq;
 
-    public class ShoppingCart
+    public partial class ShoppingCart
     {
         private ICollection<ProductCartItem> productCartItems;
 
@@ -23,10 +24,12 @@
 
         public virtual Order Order { get; set; }
 
-        public virtual ICollection<ProductCartItem> ProductCartItems
+        public ICollection<ProductCartItem> ProductCartItems
         {
             get { return this.productCartItems; }
             set { this.productCartItems = value; }
         }
     }
+
+  
 }

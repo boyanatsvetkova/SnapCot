@@ -46,6 +46,18 @@
                 }
             </ul>
         </div>
+        @if (this.User.Identity.IsAuthenticated)
+        {
+            using (Html.BeginForm("AddToCart", "ShoppingCart", new { area = "Private"} , FormMethod.Post))
+            {
+                <div class="pull-right">
+                    @Html.HiddenFor(m => m.Id)
+                    @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                    <input type="submit" class="btn btn-success" value="Add to cart" />
+                </div>
+            }
+        }
+
     </div>
 </div>
 

@@ -12,5 +12,7 @@
         IQueryable<Product> All(int page, int producerId, string searchString, string orderByPrice);
 
         IQueryable<Product> GetProdcutById(int id);
+
+        void UpdateProductQuantity(Product product, decimal quantity);
     }
 }
