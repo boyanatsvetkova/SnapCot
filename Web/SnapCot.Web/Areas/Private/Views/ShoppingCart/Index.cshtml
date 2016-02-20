@@ -7,10 +7,10 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
+            <th class="text-center">
                 Quantity
             </th>
-            <th>
+            <th class="text-center">
                 Item
             </th>
             <th class="text-right">
@@ -25,8 +25,8 @@
         @foreach (var item in Model.Cart.ProductCartItems)
         {
             <tr>
-                <td class="text-right">@item.Quantity</td>
-                <td class="text-right">@item.Product.Name</td>
+                <td class="text-center">@item.Quantity</td>
+                <td class="text-center">@item.Product.Name</td>
                 <td class="text-right">@item.Product.Price.ToString("c")</td>
                 <td class="text-right">@((item.Quantity * item.Product.Price).ToString("c"))</td>
             </tr>         

@@ -8,6 +8,7 @@
     using System.Web;
     using System.Web.Mvc;
     using Data.Models;
+    using Web.ViewModels.ProductViewModels;
 
     public class ShoppingCartController : Controller
     {
@@ -33,23 +34,48 @@
         }
 
         [HttpPost]
-        public ActionResult AddToCart(int id, string returnUrl)
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddToCart(AddProductInputModel model, string returnUrl)
         {
-            var product = this.products.GetProdcutById(id).FirstOrDefault();
-
-            if (product != null)
+            // TODO Code is repeated
+            // TODO Destroy Session after user is logged in
+            // TODO Require log in for the shopping cart to be seen
+            string warningMessage = null;
+            if (ModelState.IsValid)
             {
-                // TODO see how quantity will be taken
-                //if (product.Quantity > quantity)
-                //{
-                //this.products.UpdateProductQuantity(product, 0);
-                this.GetCart().AddItem(product, 0);
-                //}
-
-                //TODO redirect with notification that product quantity is not enough to buy               
+                var product = this.products.GetProdcutById(model.Id).FirstOrDefault();
+                if (product != null)
+                {
+                    // TODO see how quantity will be taken
+                    if (product.Quantity >= model.QuantityToOrder)
+                    {
+                        var cart = this.GetCart();
+                        string addedProduct = cart.AddItem(product, model.QuantityToOrder);
+                        if (addedProduct != null)
+                        {
+                            warningMessage = addedProduct;
+                        }
+                        else
+                        {
+                            this.products.UpdateProductQuantity(product, (decimal)model.QuantityToOrder);
+                            return this.RedirectToAction("Index", new { returnUrl });
+                        }
+                    }
+                    else
+                    {
+                        //TODO redirect with notification that product quantity is not enough to buy    
+                        warningMessage = "Quantity is not enough to buy!";
+                    }
+                }
+                else
+                {
+                    warningMessage = "Product does not exist!";
+                }
             }
 
-            return RedirectToAction("Index", new { returnUrl });
+            this.TempData["Notification"] = warningMessage;
+            return this.RedirectToAction("Details", "Products", new { area = string.Empty, id = model.Id });
         }
 
         public ActionResult RemoveFromCart(int productId, string returnUrl)

@@ -11,53 +11,53 @@
 <div class="div-box-body product-details-background image-size enlarge">
     <div class="container div-box-content">
         <h2>Product Details</h2>
-        <div class="image-position">
-            <img src="@Url.Action("Image", "Products", new { id = Model.ImageId })" class="image-details" alt="@Model.Name" />
-        </div>
-        <div class="text-position">
-            <h1>
-                @Html.DisplayFor(m => Model.Name)
-            </h1>
-            <p>
-                @Html.Raw(Model.Description)
-            </p>
-            <p>
-                @Html.DisplayFor(m => Model.Price)
-            </p>
-            <p>
-            <p>
-                @Html.DisplayFor(m => Model.Quantity)
-            </p>
-            <p>
-                @Html.DisplayFor(m => Model.Type)
-            </p>
-            <p>
-                @Html.DisplayFor(m => Model.Classification)
-            </p>
-            <p>
-                @Html.DisplayFor(m => Model.Producer)
-            </p>
-        </div>
-        <div>
-            <ul>
-                @foreach (var industry in Model.Industry)
-                {
-                    <li>@industry.Name</li>
-                }
-            </ul>
-        </div>
-        @if (this.User.Identity.IsAuthenticated)
-        {
-            using (Html.BeginForm("AddToCart", "ShoppingCart", new { area = "Private"} , FormMethod.Post))
+            @*@Html.ValidationSummary("", new { @class = "text-danger " })*@
+            @if (this.TempData["Notification"] != null)
             {
-                <div class="pull-right">
-                    @Html.HiddenFor(m => m.Id)
-                    @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-                    <input type="submit" class="btn btn-success" value="Add to cart" />
-                </div>
+                <div class="alert alert-success">@this.TempData["Notification"]</div>
             }
-        }
-
-    </div>
+            <div class="image-position">
+                <img src="@Url.Action("Image", "Products", new { id = Model.ImageId })" class="image-details" alt="@Model.Name" />
+            </div>
+            <div class="text-position">
+                <h1>
+                    @Html.DisplayFor(m => Model.Name)
+                </h1>
+                <p>
+                    @Html.Raw(Model.Description)
+                </p>
+                <p>
+                    @Html.DisplayFor(m => Model.Price)
+                </p>
+                <p>
+                <p>
+                    @Html.DisplayFor(m => Model.Quantity)
+                </p>
+                <p>
+                    @Html.DisplayFor(m => Model.Type)
+                </p>
+                <p>
+                    @Html.DisplayFor(m => Model.Classification)
+                </p>
+                <p>
+                    @Html.DisplayFor(m => Model.Producer)
+                </p>
+            </div>
+            <div>
+                <ul>
+                    @foreach (var industry in Model.Industry)
+                    {
+                        <li>@industry.Name</li>
+                    }
+                </ul>
+            </div>
+            @if (this.User.Identity.IsAuthenticated)
+            {
+                @Html.Action("GetAddProductView", new { id = Model.Id })
+            }
+        </div>
 </div>
 
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

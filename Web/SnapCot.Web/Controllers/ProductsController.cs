@@ -129,5 +129,16 @@
 
             return File(image.Content, "image/" + image.FileExtension);
         }
+
+        [ChildActionOnly]
+        public ActionResult GetAddProductView(int id)
+        {
+            var model = new AddProductInputModel
+            {
+                Id = id
+            };
+
+            return this.PartialView("_GetAddProductViewPartial", model);
+        }
     }
 }

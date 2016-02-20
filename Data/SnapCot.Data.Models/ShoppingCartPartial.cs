@@ -4,10 +4,10 @@
 
     public partial class ShoppingCart
     {
-        public void AddItem(Product product, decimal quantity)
+        public string AddItem(Product product, decimal quantity)
         {
             var item = this.ProductCartItems
-                .Where(p => p.ProdcutId == product.Id)
+                .Where(p => p.Product.Id == product.Id)
                 .FirstOrDefault();
 
             if (item == null)
@@ -20,12 +20,18 @@
 
                 this.ProductCartItems.Add(cartItem);
             }
+            else
+            {
+                return "You have already order this product! Delete the first order and make an order again!";
+            }
+
+            return null;
         }
 
         public void RemoveItem(int productId)
         {
             var item = this.ProductCartItems
-                .Where(i => i.ProdcutId == productId)
+                .Where(i => i.ProductId == productId)
                 .FirstOrDefault();
 
             this.ProductCartItems.Remove(item);

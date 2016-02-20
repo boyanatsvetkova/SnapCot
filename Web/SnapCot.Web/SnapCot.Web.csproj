@@ -237,6 +237,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Paging\PaginationViewModel.cs" />
     <Compile Include="ViewModels\ProducerViewModels\ProducerViewModel.cs" />
+    <Compile Include="ViewModels\ProductViewModels\AddProductInputModel.cs" />
     <Compile Include="ViewModels\ProductViewModels\AllPagedProductsViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModels\AllProductsViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModels\DetailedProductViewModel.cs" />
@@ -324,11 +325,12 @@
     <Content Include="Views\Shared\DisplayTemplates\String.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Decimal.cshtml" />
     <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\_GetAddProductViewPartial.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Private\Views\Shared\" />
-    <Folder Include="Views\Shared\EditorTemplates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
