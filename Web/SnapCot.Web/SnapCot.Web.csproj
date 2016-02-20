@@ -213,6 +213,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Private\Controllers\BaseController.cs" />
     <Compile Include="Areas\Private\Controllers\ShoppingCartController.cs" />
     <Compile Include="Areas\Private\PrivateAreaRegistration.cs" />
     <Compile Include="Areas\Private\ViewModels\ShoppingCartViewModel.cs" />
@@ -327,9 +328,11 @@
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\_GetAddProductViewPartial.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
+    <Content Include="Views\Shared\_CartSummaryPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Private\Views\Base\" />
     <Folder Include="Areas\Private\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>

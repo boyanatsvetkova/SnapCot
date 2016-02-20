@@ -22,19 +22,21 @@
             }
             else
             {
-                return "You have already order this product! Delete the first order and make an order again!";
+                return "You have already ordered this product!";
             }
 
             return null;
         }
 
-        public void RemoveItem(int productId)
+        public decimal RemoveItem(int productId)
         {
             var item = this.ProductCartItems
-                .Where(i => i.ProductId == productId)
+                .Where(i => i.Product.Id == productId)
                 .FirstOrDefault();
 
             this.ProductCartItems.Remove(item);
+
+            return item.Quantity;
         }
 
         public decimal GetCartTotal()

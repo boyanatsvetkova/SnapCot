@@ -9,7 +9,7 @@
 
         //[Required]
         [UIHint("Decimal")]
-        [Range(0.0, Double.MaxValue)]
+        [Range(0.1, Double.MaxValue)]
         public decimal QuantityToOrder { get; set; }
     }
 }

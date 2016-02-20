@@ -12,6 +12,8 @@
 
     public class ShoppingCartController : Controller
     {
+        private const string ProductsUrl = "/Products/All";
+
         private IShoppingCartService carts;
         private IProductService products;
 
@@ -22,15 +24,28 @@
             this.products = products;
         }
 
-        public ActionResult Index(string returnUrl)
+        public ActionResult Index()
+        {
+
+            var cart = new ShoppingCartViewModel
+            {
+                Cart = GetCart(),
+                ReturnUrl = ProductsUrl
+            };
+
+            return View(cart);
+        }
+
+        [ChildActionOnly]
+        public ActionResult GetCartSummary()
         {
             var cart = new ShoppingCartViewModel
             {
                 Cart = GetCart(),
-                ReturnUrl = returnUrl
+                ReturnUrl = ProductsUrl
             };
 
-            return View(cart);
+            return PartialView("_CartSummaryPartial", cart);
         }
 
         [HttpPost]
@@ -41,6 +56,7 @@
             // TODO Code is repeated
             // TODO Destroy Session after user is logged in
             // TODO Require log in for the shopping cart to be seen
+            // When session is destroyed revert quantity changes back
             string warningMessage = null;
             if (ModelState.IsValid)
             {
@@ -81,7 +97,17 @@
         public ActionResult RemoveFromCart(int productId, string returnUrl)
         {
             // TODO remove quantity
-            GetCart().RemoveItem(productId);
+            var product = this.products.GetProdcutById(productId).FirstOrDefault();
+            if (product == null)
+            {
+                this.TempData["Notification"] = "Product does not exist!";
+            }
+            else
+            {
+                var quantityRemoved = this.GetCart().RemoveItem(productId);
+                this.products.UpdateProductQuantity(product, (quantityRemoved * -1));
+            }         
+
             return RedirectToAction("Index", new { returnUrl });
         }
 

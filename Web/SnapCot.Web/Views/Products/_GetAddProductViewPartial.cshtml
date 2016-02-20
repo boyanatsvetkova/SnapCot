@@ -7,7 +7,6 @@
         @Html.ValidationSummary("", new { @class = "text-danger " })
         @Html.HiddenFor(m => m.Id)
         @Html.EditorFor(m => m.QuantityToOrder)
-        @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
         <input type="submit" class="btn btn-success" value="Add to cart" />
     </div>
 }
