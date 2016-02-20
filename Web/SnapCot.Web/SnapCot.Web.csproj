@@ -329,6 +329,7 @@
     <Content Include="Views\Products\_GetAddProductViewPartial.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
     <Content Include="Views\Shared\_CartSummaryPartial.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TryMerger.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
