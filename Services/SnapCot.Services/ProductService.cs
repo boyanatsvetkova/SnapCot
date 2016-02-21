@@ -16,6 +16,12 @@
             this.products = products;
         }
 
+        public void Add(Product product)
+        {
+            this.products.Add(product);
+            this.products.SaveChanges();
+        }
+
         public IQueryable<Product> All(int page, int producerId, string searchString, string orderByPrice)
         {
             var products = this.products

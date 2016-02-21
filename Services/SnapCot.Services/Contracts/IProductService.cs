@@ -14,5 +14,7 @@
         IQueryable<Product> GetProdcutById(int id);
 
         void UpdateProductQuantity(Product product, decimal quantity);
+
+        void Add(Product product);
     }
 }

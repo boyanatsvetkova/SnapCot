@@ -6,10 +6,8 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @RenderSection("customstyles", required: false)
 </head>
 <body>
-    <!--navbar-fixed-top-->
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -22,30 +20,18 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = string.Empty}, null)</li>
-                    <li>@Html.ActionLink("Products", "All", "Products", new { area = string.Empty }, null)</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = string.Empty }, null)</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = string.Empty }, null)</li>
-                    @if (this.User.IsInRole("Admin"))
-                    {
-                        <li>@Html.ActionLink("Add Product", "AddProduct", "ProductsAdmin", new { area = "Admin"}, null)</li>
-                    }
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <!--class="container body-content"-->
-    <div class="div-box">
+
+    <div class="container body-content">
         @RenderBody()
         <hr />
-        <!--<footer> was in the same <div> for rendering content-body-->
-        <footer class="text-center bo">
-            <p>&copy; @DateTime.Now.Year - SnapCot</p>
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-
-
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

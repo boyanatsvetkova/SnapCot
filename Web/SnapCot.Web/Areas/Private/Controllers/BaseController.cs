@@ -13,9 +13,9 @@
     {
         protected IUserService users;
 
-        public BaseController(IUserService usersService)
+        public BaseController(IUserService users)
         {
-            this.users = usersService;
+            this.users = users;
         }
 
         protected User CurrentUser { get; private set; }

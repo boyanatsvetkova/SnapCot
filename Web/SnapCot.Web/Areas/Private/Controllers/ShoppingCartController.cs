@@ -10,6 +10,7 @@
     using Data.Models;
     using Web.ViewModels.ProductViewModels;
 
+    [Authorize]
     public class ShoppingCartController : Controller
     {
         private const string ProductsUrl = "/Products/All";
@@ -49,12 +50,11 @@
         }
 
         [HttpPost]
-        [Authorize]
         [ValidateAntiForgeryToken]
         public ActionResult AddToCart(AddProductInputModel model, string returnUrl)
         {
             // TODO Code is repeated
-            // TODO Destroy Session after user is logged in
+            // TODO Destroy Session after user is logged out
             // TODO Require log in for the shopping cart to be seen
             // When session is destroyed revert quantity changes back
             string warningMessage = null;
