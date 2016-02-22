@@ -17,7 +17,14 @@
 
         public IQueryable<Producer> All()
         {
+<<<<<<< public/listproducts
             return this.producers.All().OrderBy(p => p.Name);
+=======
+            return this.producers
+                .All()
+                .OrderByDescending(p => p.DateAdded)
+                .Take(5);
+>>>>>>> local
         }
     }
 }

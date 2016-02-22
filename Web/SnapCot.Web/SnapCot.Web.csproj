@@ -228,6 +228,13 @@
     <Compile Include="Inrastructure\Mappings\IMapTo{T}.cs" />
     <Compile Include="Inrastructure\Mappings\QueryableExtensions.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
+<<<<<<< public/listproducts
+=======
+    <Compile Include="ViewModels\CommentsViewModels\CommentInputModel.cs" />
+    <Compile Include="ViewModels\CommentsViewModels\CommentViewModel.cs" />
+    <Compile Include="ViewModels\CommentsViewModels\PageableCommentViewModel.cs" />
+    <Compile Include="ViewModels\CommonViewModels\CountryDropDownViewModel.cs" />
+>>>>>>> local
     <Compile Include="ViewModels\CommonViewModels\IndustryViewModel.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
