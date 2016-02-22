@@ -15,9 +15,18 @@
             this.producers = producers;
         }
 
+        public void Add(Producer producer)
+        {
+            this.producers.Add(producer);
+            this.producers.SaveChanges();
+        }
+
         public IQueryable<Producer> All()
         {
-            return this.producers.All().OrderBy(p => p.Name);
+            return this.producers
+                .All()
+                .OrderBy(p => p.DateAdded)
+                .Take(5);
         }
     }
 }

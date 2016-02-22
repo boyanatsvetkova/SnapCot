@@ -41,6 +41,6 @@
 
         public IEnumerable<SelectListItem> HazardClassifications { get; set; }
 
-        public IList<IndustryViewModel> Industries { get; set; }
+        public IList<IndustryInputViewModel> Industries { get; set; }
     }
 }

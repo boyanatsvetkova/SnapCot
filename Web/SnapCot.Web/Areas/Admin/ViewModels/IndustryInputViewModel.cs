@@ -3,7 +3,7 @@
     using SnapCot.Data.Models;
     using SnapCot.Web.Infrastructure.Mapping;
 
-    public class IndustryViewModel : IMapFrom<Industry>
+    public class IndustryInputViewModel : IMapFrom<Industry>
     {
         public int Id { get; set; }
 

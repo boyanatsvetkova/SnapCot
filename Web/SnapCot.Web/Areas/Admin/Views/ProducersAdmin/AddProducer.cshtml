@@ -1,0 +1,30 @@
+﻿@model SnapCot.Web.Areas.Admin.ViewModels.AddProducerInputModel
+@{
+    ViewBag.Title = "AddProducer";
+}
+
+<h2>AddProducer</h2>
+@using (Html.BeginForm("AddProducer", "ProducerssAdmin", FormMethod.Post, new { @class = "form"}))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary("", new { @class = "text-danger " })
+    <br />
+    @Html.EditorFor(m => m.Name)
+    @Html.EditorFor(m => m.Address)
+    @Html.EditorFor(m => m.Email)
+    @Html.EditorFor(m => m.Telephone)
+    @Html.EditorFor(m => m.Website)
+    @Html.EditorFor(m => m.CountryId)  
+    <br />
+    <div class="row">
+        <div class="col-md-5 col-md-offset-2">
+            <input type="submit" class="btn btn-default" value="Add Producer"/>
+        </div>
+    </div>
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

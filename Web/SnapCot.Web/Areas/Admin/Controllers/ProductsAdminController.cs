@@ -32,7 +32,7 @@
         {
             var industries = this.commons
                 .AllIndustries()
-                .Select(i => new IndustryViewModel
+                .Select(i => new IndustryInputViewModel
                 {
                     Id = i.Id,
                     Name = i.Name,

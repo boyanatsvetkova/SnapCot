@@ -214,9 +214,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProducersAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsAdminController.cs" />
+    <Compile Include="Areas\Admin\ViewModels\AddProducerInputModel.cs" />
     <Compile Include="Areas\Admin\ViewModels\AddProductInputModel.cs" />
-    <Compile Include="Areas\Admin\ViewModels\IndustryViewModel.cs" />
+    <Compile Include="Areas\Admin\ViewModels\IndustryInputViewModel.cs" />
     <Compile Include="Areas\Private\Controllers\BaseController.cs" />
     <Compile Include="Areas\Private\Controllers\OrdersController.cs" />
     <Compile Include="Areas\Private\Controllers\ShoppingCartController.cs" />
@@ -248,6 +250,7 @@
     <Compile Include="ViewModels\ProductViewModels\AllPagedProductsViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModels\AllProductsViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModels\DetailedProductViewModel.cs" />
+    <Compile Include="ViewModels\ProductViewModels\HomeProdcutViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -320,6 +323,7 @@
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\ProductsAdmin\AddProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\ProducersAdmin\AddProducer.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -376,6 +380,9 @@
     <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
     <Content Include="Views\Shared\_CartSummaryPartial.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CountryDropDown.cshtml" />
+    <Content Include="Views\Home\_HomeProductPartial.cshtml" />
+    <Content Include="Views\Home\_HomeProducerPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

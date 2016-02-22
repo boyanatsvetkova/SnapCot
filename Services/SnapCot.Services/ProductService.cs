@@ -22,6 +22,14 @@
             this.products.SaveChanges();
         }
 
+        public IQueryable<Product> All()
+        {
+            return this.products
+                .All()
+                .OrderByDescending(p => p.DateAdded)
+                .Take(5);
+        }
+
         public IQueryable<Product> All(int page, int producerId, string searchString, string orderByPrice)
         {
             var products = this.products

@@ -29,6 +29,7 @@
                     @if (this.User.IsInRole("Admin"))
                     {
                         <li>@Html.ActionLink("Add Product", "AddProduct", "ProductsAdmin", new { area = "Admin"}, null)</li>
+                        <li>@Html.ActionLink("Add Producer", "AddProducer", "ProducersAdmin", new { area = "Admin" }, null)</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
