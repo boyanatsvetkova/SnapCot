@@ -22,10 +22,21 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Products", "All", "Products")</li>
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = string.Empty}, null)</li>
+                    <li>@Html.ActionLink("Products", "All", "Products", new { area = string.Empty }, null)</li>
+                    <li>@Html.ActionLink("Comments", "All", "Comments", new { area = string.Empty }, null)</li>
+                    <li>@Html.ActionLink("About", "About", "Home", new { area = string.Empty }, null)</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = string.Empty }, null)</li>
+                    @if (this.User.IsInRole("Admin"))
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Add Product", "AddProduct", "ProductsAdmin", new { area = "Admin" }, null)</li>
+                                <li>@Html.ActionLink("Add Producer", "AddProducer", "ProducersAdmin", new { area = "Admin" }, null)</li>
+                            </ul>
+                        </li>                     
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

@@ -10,12 +10,16 @@
 
     public class DetailedProductViewModel : IMapFrom<Product>, IHaveCustomMappings
     {
+        public string Id { get; set; }
+
         public string Name { get; set; }
 
         public string Description { get; set; }
 
         [UIHint("String")]
         public string Quantity { get; set; }
+
+        //public decimal QuantityToBuy { get; set; }
 
         public decimal Price { get; set; }
 

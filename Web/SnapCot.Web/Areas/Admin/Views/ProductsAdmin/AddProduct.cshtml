@@ -1,0 +1,44 @@
+﻿@model SnapCot.Web.Areas.Admin.ViewModels.AddProductInputModel
+@{
+    ViewBag.Title = "AddProduct";
+}
+
+<h2>AddProduct</h2>
+@using (Html.BeginForm("AddProduct", "ProductsAdmin", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary("", new { @class = "text-danger " })
+    <br />
+    @Html.EditorFor(m => m.Name)
+    @Html.EditorFor(m => m.Description)
+    @Html.EditorFor(m => m.Price)
+    @Html.EditorFor(m => m.Quantity)
+    @Html.EnumDropDownListFor(m => m.ProductType, "Select Product Type", new { @class = "form-control" })
+    @Html.DropDownListFor(m => m.ProducerId, new SelectList(Model.Producers, "Value", "Text"), "Select Producer")
+    @Html.DropDownListFor(m => m.HazardClassificationId, new SelectList(Model.HazardClassifications, "Value", "Text"), "Select Classification")
+    for (int i = 0; i < Model.Industries.Count; i++)
+    {
+        @Html.HiddenFor(m => m.Industries[i].Id)
+        @Html.HiddenFor(m => m.Industries[i].Name)
+        @Html.CheckBoxFor(m => m.Industries[i].IsSelected);
+        @Html.LabelFor(m => m.Industries[i].IsSelected, Model.Industries[i].Name);
+    }
+    <div class="row">
+        <div class="col-md-2">
+            <strong>Image</strong>
+        </div>
+        <div class="col-md-5">
+            <input type="file" name="UploadedImage" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-5 col-md-offset-2">
+            <input type="submit" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

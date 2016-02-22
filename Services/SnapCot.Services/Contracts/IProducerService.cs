@@ -6,5 +6,7 @@
     public interface IProducerService
     {
         IQueryable<Producer> All();
+
+        void Add(Producer producer);
     }
 }

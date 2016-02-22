@@ -1,0 +1,68 @@
+﻿@model SnapCot.Web.Areas.Private.ViewModels.ShoppingCartViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Shopping Cart</h2>
+@if (this.TempData["Notification"] != null)
+{
+    <div class="alert alert-success">@this.TempData["Notification"]</div>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-center">
+                Quantity
+            </th>
+            <th class="text-center">
+                Item
+            </th>
+            <th class="text-right">
+                Price
+            </th>
+            <th class="text-right">
+                Subtotal
+            </th>
+            <th>
+                Remove Item
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Cart.ProductCartItems)
+        {
+            <tr>
+                <td class="text-center">@item.Quantity</td>
+                <td class="text-center">@item.Product.Name</td>
+                <td class="text-right">@item.Product.Price.ToString("c")</td>
+                <td class="text-right">@((item.Quantity * item.Product.Price).ToString("c"))</td>
+                <td>
+                    @using (Html.BeginForm("RemoveFromCart", "ShoppingCart"))
+                    {
+                        // TODO Can set partial view
+                        @Html.Hidden("productId", item.Product.Id)
+                        <input class="btn btn-warning" type="submit" value="Remove" />
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">
+                Total:
+            </td>
+            <td class="text-right">
+                @Model.Cart.GetCartTotal().ToString("c")
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<div class="text-center">
+    <a class="btn btn-primary" href="@Model.ReturnUrl">
+        Continue Shopping
+    </a>
+
+    @Html.ActionLink("Make Order", "MakeOrder", "Orders", null, new { @class = "btn btn-success"})
+</div>
+

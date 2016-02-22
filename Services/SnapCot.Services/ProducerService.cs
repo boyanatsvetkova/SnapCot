@@ -15,8 +15,15 @@
             this.producers = producers;
         }
 
+        public void Add(Producer producer)
+        {
+            this.producers.Add(producer);
+            this.producers.SaveChanges();
+        }
+
         public IQueryable<Producer> All()
         {
+<<<<<<< HEAD
 <<<<<<< public/listproducts
             return this.producers.All().OrderBy(p => p.Name);
 =======
@@ -25,6 +32,12 @@
                 .OrderByDescending(p => p.DateAdded)
                 .Take(5);
 >>>>>>> local
+=======
+            return this.producers
+                .All()
+                .OrderBy(p => p.DateAdded)
+                .Take(5);
+>>>>>>> master
         }
     }
 }

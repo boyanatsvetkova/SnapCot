@@ -16,6 +16,20 @@
             this.products = products;
         }
 
+        public void Add(Product product)
+        {
+            this.products.Add(product);
+            this.products.SaveChanges();
+        }
+
+        public IQueryable<Product> All()
+        {
+            return this.products
+                .All()
+                .OrderByDescending(p => p.DateAdded)
+                .Take(5);
+        }
+
         public IQueryable<Product> All(int page, int producerId, string searchString, string orderByPrice)
         {
             var products = this.products
@@ -58,6 +72,12 @@
             return this.products
                 .All()
                 .Where(p => p.Id == id);
+        }
+
+        public void UpdateProductQuantity(Product product, decimal quantity)
+        {
+            product.Quantity -= quantity;
+            this.products.SaveChanges();
         }
     }
 }

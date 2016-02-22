@@ -1,0 +1,21 @@
+﻿@model IEnumerable<SnapCot.Web.ViewModels.ProductViewModels.HomeProdcutViewModel>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Type</th>
+        </tr>
+    </thead>
+    <tbody>
+     @foreach (var item in Model)
+     {
+         <tr>
+             <td>@item.Name</td>
+             <td>@item.Price</td>
+             <td>@item.ProductType</td>
+         </tr>
+     }
+    </tbody>
+</table>

@@ -1,0 +1,19 @@
+﻿@model IEnumerable<SnapCot.Web.ViewModels.ProducerViewModels.ProducerViewModel>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Country</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Country</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -213,7 +213,20 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProducersAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductsAdminController.cs" />
+    <Compile Include="Areas\Admin\ViewModels\AddProducerInputModel.cs" />
+    <Compile Include="Areas\Admin\ViewModels\AddProductInputModel.cs" />
+    <Compile Include="Areas\Admin\ViewModels\IndustryInputViewModel.cs" />
+    <Compile Include="Areas\Private\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Private\Controllers\OrdersController.cs" />
+    <Compile Include="Areas\Private\Controllers\ShoppingCartController.cs" />
+    <Compile Include="Areas\Private\PrivateAreaRegistration.cs" />
+    <Compile Include="Areas\Private\ViewModels\MakeAnOrderViewModel.cs" />
+    <Compile Include="Areas\Private\ViewModels\ShoppingCartViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="App_Start\GlimpseSecurityPolicy.cs" />
@@ -228,6 +241,7 @@
     <Compile Include="Inrastructure\Mappings\IMapTo{T}.cs" />
     <Compile Include="Inrastructure\Mappings\QueryableExtensions.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
+<<<<<<< HEAD
 <<<<<<< public/listproducts
 =======
     <Compile Include="ViewModels\CommentsViewModels\CommentInputModel.cs" />
@@ -235,15 +249,22 @@
     <Compile Include="ViewModels\CommentsViewModels\PageableCommentViewModel.cs" />
     <Compile Include="ViewModels\CommonViewModels\CountryDropDownViewModel.cs" />
 >>>>>>> local
+=======
+    <Compile Include="ViewModels\CommentsViewModels\CommentInputModel.cs" />
+    <Compile Include="ViewModels\CommentsViewModels\CommentViewModel.cs" />
+    <Compile Include="ViewModels\CommentsViewModels\PageableCommentViewModel.cs" />
+>>>>>>> master
     <Compile Include="ViewModels\CommonViewModels\IndustryViewModel.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Paging\PaginationViewModel.cs" />
     <Compile Include="ViewModels\ProducerViewModels\ProducerViewModel.cs" />
+    <Compile Include="ViewModels\ProductViewModels\AddProductInputModel.cs" />
     <Compile Include="ViewModels\ProductViewModels\AllPagedProductsViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModels\AllProductsViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModels\DetailedProductViewModel.cs" />
+    <Compile Include="ViewModels\ProductViewModels\HomeProdcutViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -251,6 +272,39 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\listitems.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -275,10 +329,23 @@
     <Content Include="Images\Backgrounds\Sunset-on-the-Superstitions.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Private\Views\web.config" />
+    <Content Include="Areas\Private\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Private\Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Areas\Private\Views\Orders\MakeOrder.cshtml" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductsAdmin\AddProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\ProducersAdmin\AddProducer.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -325,10 +392,21 @@
     <Content Include="Views\Shared\DisplayTemplates\String.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Decimal.cshtml" />
     <Content Include="Views\Products\Details.cshtml" />
+    <Content Include="Views\Products\_GetAddProductViewPartial.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Decimal.cshtml" />
+    <Content Include="Views\Shared\_CartSummaryPartial.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CountryDropDown.cshtml" />
+    <Content Include="Views\Home\_HomeProductPartial.cshtml" />
+    <Content Include="Views\Home\_HomeProducerPartial.cshtml" />
+    <Content Include="Views\Comments\All.cshtml" />
+    <Content Include="Views\Comments\_AddCommentPartial.cshtml" />
+    <Content Include="Views\Comments\_AllCommentsPartialView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Shared\EditorTemplates\" />
+    <Folder Include="Areas\Private\Views\Base\" />
+    <Folder Include="Areas\Private\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

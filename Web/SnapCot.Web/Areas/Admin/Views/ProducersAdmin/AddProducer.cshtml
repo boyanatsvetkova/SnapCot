@@ -4,7 +4,11 @@
 }
 
 <h2>AddProducer</h2>
+<<<<<<< HEAD
 @using (Html.BeginForm("AddProducer", "ProducersAdmin", FormMethod.Post, new { @class = "form"}))
+=======
+@using (Html.BeginForm("AddProducer", "ProducerssAdmin", FormMethod.Post, new { @class = "form"}))
+>>>>>>> master
 {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary("", new { @class = "text-danger " })
@@ -14,7 +18,11 @@
     @Html.EditorFor(m => m.Email)
     @Html.EditorFor(m => m.Telephone)
     @Html.EditorFor(m => m.Website)
+<<<<<<< HEAD
     @Html.EditorFor(m => m.Country, "CountryDropDown")  
+=======
+    @Html.EditorFor(m => m.CountryId)  
+>>>>>>> master
     <br />
     <div class="row">
         <div class="col-md-5 col-md-offset-2">

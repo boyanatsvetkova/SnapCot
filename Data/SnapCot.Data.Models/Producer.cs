@@ -1,5 +1,6 @@
 ﻿namespace SnapCot.Data.Models
 {
+    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
@@ -29,6 +30,8 @@
 
         [Required]
         public string Email { get; set; }
+
+        public DateTime DateAdded { get; set; }
 
         public string Website { get; set; }
 

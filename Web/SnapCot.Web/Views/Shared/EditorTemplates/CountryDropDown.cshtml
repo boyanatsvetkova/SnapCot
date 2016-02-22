@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 ﻿@model SnapCot.Web.ViewModels.CommonViewModels.CountryDropDownViewModel
 
 @Html.DropDownListFor(m => m.CountryId, Model.Countries, "Slect Country")
+=======
+﻿@model IEnumerable<SelectListItem>
+
+@Html.DropDownList("", (new SelectList(Model, "Value", "Text")))
+>>>>>>> master
