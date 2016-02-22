@@ -10,5 +10,9 @@
         IQueryable<Comment> All(int page);
 
         void Add(Comment comment);
+
+        Comment GetCommentById(int id);
+
+        void DeleteComment(Comment comment);
     }
 }

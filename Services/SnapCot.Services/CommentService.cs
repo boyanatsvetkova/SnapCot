@@ -34,5 +34,16 @@
                .Skip((page - 1) * 5)
                .Take(5);
         }
+
+        public void DeleteComment(Comment comment)
+        {
+            this.comments.Delete(comment);
+            this.comments.SaveChanges();
+        }
+
+        public Comment GetCommentById(int id)
+        {
+            return this.comments.GetById(id);
+        }
     }
 }

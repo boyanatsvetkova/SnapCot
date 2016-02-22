@@ -13,6 +13,11 @@
                 <h3>@item.Author</h3>
                 <span>@item.CreatedOn</span>
                 <p>@Html.Raw(item.Content)</p>
+
+                if (this.User.Identity.IsAuthenticated && this.User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("Delete", "DeleteComment", "Comments", new { item.Id }, new { @class = "btn btn-success" })
+                }
             }
         }
         <nav>

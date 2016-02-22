@@ -10,6 +10,8 @@
 
     public class CommentViewModel : IMapFrom<Comment>, IHaveCustomMappings
     {
+        public int Id { get; set; }
+
         public string Content { get; set; }
 
         public DateTime CreatedOn { get; set; }

@@ -4,6 +4,11 @@
     ViewBag.Title = "All";
 }
 
+@if (this.TempData["Notification"] != null)
+{
+    <div class="alert alert-success">@this.TempData["Notification"]</div>
+}
+
 @Html.Partial("_AllCommentsPartialView", Model)
 
 @if (this.User.Identity.IsAuthenticated)
