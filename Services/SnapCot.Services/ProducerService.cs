@@ -25,7 +25,7 @@
         {
             return this.producers
                 .All()
-                .OrderBy(p => p.DateAdded)
+                .OrderByDescending(p => p.DateAdded)
                 .Take(5);
         }
     }
