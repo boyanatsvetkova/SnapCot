@@ -11,6 +11,8 @@
 
         public string Name { get; set; }
 
+        public string Website { get; set; }
+
         public string Country { get; set; }
 
         public void CreateMappings(IMapperConfiguration configuration)

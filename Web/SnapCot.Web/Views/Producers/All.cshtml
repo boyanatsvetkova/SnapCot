@@ -1,0 +1,76 @@
+﻿@model SnapCot.Web.ViewModels.ProducerViewModels.PagedProducersViewModel
+@{
+    ViewBag.Title = "All";
+}
+
+<h2>Producers</h2>
+
+<table>
+    <tr>
+        <th>
+            @Html.ActionLink("Name", "All", new { sortOrder = ViewBag.NameSortParm})
+        </th>
+        <th>
+            Website
+        </th>
+        <th>
+            @Html.ActionLink("Country", "All", new { sortOrder = ViewBag.CountrySortParm})
+        </th>
+        <th>Details</th>
+    </tr>
+
+    @foreach (var producer in Model.Producers)
+    {
+        <tr>
+            <td>@producer.Name</td>
+            @if (producer.Website != null)
+            {
+                <td>@producer.Website</td>
+            }
+            else
+            {
+                <td>unavailable</td>
+            }
+
+            <td>@producer.Country</td>
+            @if (this.User.Identity.IsAuthenticated)
+            {
+                <td>@Html.ActionLink("Details", "Details", "DetailProducer", new { area = "Private", id = producer.Id }, new { @class = "btn btn-success" })</td>
+            }
+        </tr>
+    }
+</table>
+<nav>
+    <ul class="pagination">
+
+        @if (Model.PageNumber > 1)
+            {
+            <li>
+                <a href="/Producers/All?sortOrder=@Model.Order&page=@(Model.PageNumber - 1)" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+        }
+        @for (int i = 1; i <= Model.PageCount; i++)
+            {
+                var className = string.Empty;
+                if (Model.PageNumber == i)
+                {
+                    className = "active";
+                }
+
+                <li class="@className">
+                    <a href="/Producers/All?sortOrder=@Model.Order&page=@i">@i</a>
+                </li>
+        }
+
+        @if (Model.PageNumber < Model.PageCount)
+            {
+            <li>
+                <a href="/Producers/All?sortOrder=@Model.Order&page=@(Model.PageNumber + 1)" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        }
+    </ul>
+</nav>

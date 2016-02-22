@@ -8,5 +8,7 @@
         IQueryable<Producer> All();
 
         void Add(Producer producer);
+
+        IQueryable<Producer> GetProducers();
     }
 }

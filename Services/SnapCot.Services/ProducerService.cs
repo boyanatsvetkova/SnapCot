@@ -28,5 +28,10 @@
                 .OrderByDescending(p => p.DateAdded)
                 .Take(5);
         }
+
+        public IQueryable<Producer> GetProducers()
+        {
+            return this.producers.All();
+        }
     }
 }
