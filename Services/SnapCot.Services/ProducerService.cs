@@ -24,6 +24,7 @@
         public IQueryable<Producer> All()
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< public/listproducts
             return this.producers.All().OrderBy(p => p.Name);
 =======
@@ -33,10 +34,15 @@
                 .Take(5);
 >>>>>>> local
 =======
+=======
+>>>>>>> master
             return this.producers
                 .All()
                 .OrderBy(p => p.DateAdded)
                 .Take(5);
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
         }
     }

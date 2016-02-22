@@ -6,9 +6,12 @@
     using System.Linq;
     using System.Collections.Generic;
 <<<<<<< HEAD
+<<<<<<< HEAD
     using Web.ViewModels.CommonViewModels;
     using Data.Models;
     using System;
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 
@@ -17,6 +20,7 @@
     {
         private ICountryService countries;
 <<<<<<< HEAD
+<<<<<<< HEAD
         private IProducerService producers;
 
         public ProducersAdminController(ICountryService countries, IProducerService producers)
@@ -24,10 +28,15 @@
             this.countries = countries;
             this.producers = producers;
 =======
+=======
+>>>>>>> master
    
         public ProducersAdminController(ICountryService countries)
         {
             this.countries = countries;
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
         }
 
@@ -37,10 +46,16 @@
             var model = new AddProducerInputModel
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 Country = this.GetCountries()
             };
 
             return View(model);
+=======
+
+            };
+            return View();
+>>>>>>> master
 =======
 
             };
@@ -52,6 +67,7 @@
         [ValidateAntiForgeryToken]
         public ActionResult AddProducer(AddProducerInputModel model)
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             if (ModelState.IsValid)
             {
@@ -74,11 +90,16 @@
 
         public CountryDropDownViewModel GetCountries()
 =======
+=======
+>>>>>>> master
             return View();
         }
 
         [ChildActionOnly]
         public IEnumerable<SelectListItem> GetCountries()
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
         {
             var listCountries = this.countries
@@ -91,12 +112,16 @@
                 .ToList();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             var model = new CountryDropDownViewModel
             {
                 Countries = listCountries
             };
 
             return model;
+=======
+            return listCountries;
+>>>>>>> master
 =======
             return listCountries;
 >>>>>>> master
