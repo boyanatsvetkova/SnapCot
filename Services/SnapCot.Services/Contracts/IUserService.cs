@@ -5,5 +5,7 @@
     public interface IUserService
     {
         User GetUser(string name);
+
+        SupplyManager GetManager();
     }
 }

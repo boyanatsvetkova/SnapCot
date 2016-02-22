@@ -16,13 +16,13 @@
         [Key]
         public int Id { get; set; }
 
-        public string UserId { get; set; }
+        //public string UserId { get; set; }
 
-        public virtual User User { get; set; }
+        //public virtual User User { get; set; }
 
         //public int OrderId { get; set; }
 
-        public virtual Order Order { get; set; }
+        //public virtual Order Order { get; set; }
 
         public ICollection<ProductCartItem> ProductCartItems
         {

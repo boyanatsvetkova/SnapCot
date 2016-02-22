@@ -14,25 +14,26 @@
     {
         private ITransportModeService transports;
         private IOrderService orders;
+        private ICartItemService items;
 
-        public OrdersController(IUserService users, 
+        public OrdersController(IUserService users,
             ITransportModeService transports,
-            IOrderService orders)
+            IOrderService orders,
+            ICartItemService items)
             : base(users)
         {
             this.transports = transports;
             this.orders = orders;
+            this.items = items;
         }
 
         [HttpGet]
         public ActionResult MakeOrder()
         {
             var user = this.CurrentUser;
-            var cart = (ShoppingCart)Session["Cart"];
             var model = new MakeAnOrderViewModel
             {
-                ShoppingCart = cart,
-                TotalPrice = cart.GetCartTotal(),
+                TotalPrice = GetCart().GetCartTotal(),
                 OrderDate = DateTime.UtcNow.ToShortDateString(),
                 CreditLimit = (decimal)user.CreditLimit,
                 Mode = this.GetTransportModes()
@@ -47,18 +48,32 @@
         {
             if (ModelState.IsValid)
             {
+                var cartProducts = GetCart().ProductCartItems;
                 var newOrder = new Order()
                 {
                     OrderDate = Convert.ToDateTime(order.OrderDate),
                     ReceivedDate = Convert.ToDateTime(order.ReceivedDate),
-                    ShoppingCart = order.ShoppingCart,
                     TotalPrice = order.TotalPrice,
                     TransportModeId = int.Parse(order.ModeId),
                     ShippingTerms = order.Terms,
-                    UserId = this.CurrentUser.Id
+                    UserId = this.CurrentUser.Id,
+                    IsActive = true,
+                    IsApproved = false
                 };
 
-                this.orders.AddOrder(newOrder);
+                //newOrder.ProductCartItems = cartProducts;
+                int id = this.orders.AddOrder(newOrder);
+                var orderItems = new List<ProductCartItem>();
+                foreach (var item in cartProducts)
+                {
+                    item.ProductId = item.Product.Id;
+                    item.Product = null;
+                    item.OrderId = id;
+                    orderItems.Add(item);
+                }
+
+                this.items.Add(orderItems);
+                GetCart().Clear();
             }
 
             return Redirect("/");

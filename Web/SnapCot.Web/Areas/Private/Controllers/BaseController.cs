@@ -3,9 +3,6 @@
     using Data.Models;
     using Services.Contracts;
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Web;
     using System.Web.Mvc;
     using System.Web.Routing;
 
@@ -26,6 +23,18 @@
                 .GetUser(requestContext.HttpContext.User.Identity.Name);
 
             return base.BeginExecute(requestContext, callback, state);
+        }
+
+        protected ShoppingCart GetCart()
+        {
+            var cart = (ShoppingCart)Session["Cart"];
+            if (cart == null)
+            {
+                cart = new ShoppingCart();
+                Session["Cart"] = cart;
+            }
+
+            return cart;
         }
     }
 }

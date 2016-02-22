@@ -45,13 +45,9 @@
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            // Configure StudentId as PK for StudentAddress
-            modelBuilder.Entity<Order>()
-                .HasKey(e => e.Id);
-
-            // Configure StudentId as FK for StudentAddress
-            modelBuilder.Entity<Order>()
-                .HasRequired(ad => ad.ShoppingCart);
+            //modelBuilder.Entity<ShoppingCart>()
+            //     .HasRequired(x => x.Order).WithMany()
+            //     .HasForeignKey(x => x.OrderId);
 
             base.OnModelCreating(modelBuilder);
         }

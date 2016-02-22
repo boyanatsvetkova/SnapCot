@@ -4,10 +4,6 @@
     ViewBag.Title = "MakeOrderView";
 }
 
-@section customstyles {
-    @Styles.Render("~/Content/jqueryui")
-}
-
 <h2>MakeOrderView</h2>
 
 @using (Html.BeginForm("MakeOrder", "Orders", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -19,19 +15,21 @@
     <div class="form-group">
         @Html.LabelFor(m => m.TotalPrice, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
+            @Html.HiddenFor(m => m.TotalPrice)
             @Html.DisplayFor(m => m.TotalPrice, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.OrderDate, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
+            @Html.HiddenFor(m => m.OrderDate)
             @Html.DisplayFor(m => m.OrderDate, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.ReceivedDate, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.EditorFor(m => m.ReceivedDate)
+            @Html.EditorFor(m => m.ReceivedDate, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
@@ -52,6 +50,7 @@
         <div class="form-group">
             @Html.LabelFor(m => m.CreditLimit, new { @class = "col-md-2 control-label" })
             <div class="col-md-10">
+                @Html.HiddenFor(m => m.CreditLimit)
                 @Html.DisplayFor(m => m.CreditLimit, new { @class = "form-control", @type = "number" })
             </div>
         </div>
@@ -63,11 +62,10 @@
 }
 
 @section scripts {
-    @Scripts.Render("~/bundles/jqueryui")
     <script>
         $(function () {
-            $(".jqueryui-marker-datepicker").datepicker({
-                dateFormat: "dd/mm/yy",
+            $("#ReceivedDate").datepicker({
+                dateFormat: "yy-mm-dd",
                 changeYear: true,
                 showOn: "button"
             }).css("display", "inline-block")

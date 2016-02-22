@@ -1,9 +1,10 @@
 ﻿namespace SnapCot.Services.Contracts
 {
     using SnapCot.Data.Models;
+    using System.Collections.Generic;
 
     public interface IOrderService
     {
-        void AddOrder(Order order);
+        int AddOrder(Order order);
     }
 }

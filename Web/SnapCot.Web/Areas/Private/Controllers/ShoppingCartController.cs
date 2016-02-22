@@ -11,17 +11,15 @@
     using Web.ViewModels.ProductViewModels;
 
     [Authorize]
-    public class ShoppingCartController : Controller
+    public class ShoppingCartController : BaseController
     {
         private const string ProductsUrl = "/Products/All";
 
-        private IShoppingCartService carts;
         private IProductService products;
 
-        public ShoppingCartController(IShoppingCartService carts,
-            IProductService products)
+        public ShoppingCartController(IProductService products, IUserService users)
+            :base(users) 
         {
-            this.carts = carts;
             this.products = products;
         }
 
@@ -109,18 +107,6 @@
             }         
 
             return RedirectToAction("Index", new { returnUrl });
-        }
-
-        private ShoppingCart GetCart()
-        {
-            var cart = (ShoppingCart)Session["Cart"];
-            if (cart == null)
-            {
-                cart = new ShoppingCart();
-                Session["Cart"] = cart;
-            }
-
-            return cart;
         }
     }
 }

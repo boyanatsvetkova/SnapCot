@@ -14,7 +14,11 @@
 
         public decimal Quantity { get; set; }
 
-        public int ShoppingCartId { get; set; }
+        public int OrderId { get; set; }
+
+        public virtual Order Order { get; set; }
+
+        public int? ShoppingCartId { get; set; }
 
         public virtual ShoppingCart ShoppingCart { get; set; }
     }

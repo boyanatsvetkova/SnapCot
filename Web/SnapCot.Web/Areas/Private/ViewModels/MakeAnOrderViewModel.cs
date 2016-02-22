@@ -9,8 +9,6 @@
 
     public class MakeAnOrderViewModel
     {
-        public ShoppingCart ShoppingCart { get; set; }
-
         [DisplayName("Total Price")]
         public decimal TotalPrice { get; set; }
 
@@ -20,6 +18,9 @@
         [Required]
         [DisplayName("Received Date")]
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString =
+        "{0:yyyy-MM-dd}",
+        ApplyFormatInEditMode = true)]
         public DateTime? ReceivedDate { get; set; }
 
         [DisplayName("Shipping Terms")]

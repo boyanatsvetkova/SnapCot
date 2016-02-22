@@ -1,12 +1,20 @@
 ﻿namespace SnapCot.Data.Models
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
     public class Order
     {
-        [Key]
+        private ICollection<ProductCartItem> products;
+
+        public Order()
+        {
+            this.products = new HashSet<ProductCartItem>();
+        }
+
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         public decimal TotalPrice { get; set; }
@@ -29,12 +37,14 @@
 
         public virtual User User { get; set; }
 
-        public string SupplyManagerId { get; set; }
+        //public int? ShoppingCartId { get; set; }
 
-        public virtual SupplyManager SupplyManager { get; set; }
+        //public virtual ShoppingCart ShoppingCart { get; set; }
 
-        //public int ShoppingCartId { get; set; }
-
-        public virtual ShoppingCart ShoppingCart { get; set; }
+        public ICollection<ProductCartItem> ProductCartItems
+        {
+            get { return this.products; }
+            set { this.products = value; }
+        }
     }
 }
