@@ -24,6 +24,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = string.Empty}, null)</li>
                     <li>@Html.ActionLink("Products", "All", "Products", new { area = string.Empty }, null)</li>
+                    <li>@Html.ActionLink("Comments", "All", "Comments", new { area = string.Empty }, null)</li>
                     <li>@Html.ActionLink("About", "About", "Home", new { area = string.Empty }, null)</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = string.Empty }, null)</li>
                     @if (this.User.IsInRole("Admin"))

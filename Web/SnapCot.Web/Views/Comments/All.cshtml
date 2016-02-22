@@ -1,0 +1,16 @@
+﻿@model SnapCot.Web.ViewModels.CommentsViewModels.PageableCommentViewModel
+@using SnapCot.Web.ViewModels.CommentsViewModels
+@{
+    ViewBag.Title = "All";
+}
+
+@Html.Partial("_AllCommentsPartialView", Model)
+
+@if (this.User.Identity.IsAuthenticated)
+{
+    @Html.Partial("_AddCommentPartial", new CommentInputModel())
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryajax")
+}

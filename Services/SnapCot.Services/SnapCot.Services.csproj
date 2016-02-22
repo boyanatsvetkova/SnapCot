@@ -57,7 +57,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommentService.cs" />
     <Compile Include="CommonRepositoryService.cs" />
+    <Compile Include="Contracts\ICommentService.cs" />
     <Compile Include="Contracts\ICommonRepositoryService.cs" />
     <Compile Include="Contracts\ICountryService.cs" />
     <Compile Include="Contracts\IOrderService.cs" />

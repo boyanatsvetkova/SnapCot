@@ -226,6 +226,7 @@
     <Compile Include="Areas\Private\ViewModels\MakeAnOrderViewModel.cs" />
     <Compile Include="Areas\Private\ViewModels\ShoppingCartViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="App_Start\GlimpseSecurityPolicy.cs" />
@@ -240,6 +241,9 @@
     <Compile Include="Inrastructure\Mappings\IMapTo{T}.cs" />
     <Compile Include="Inrastructure\Mappings\QueryableExtensions.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
+    <Compile Include="ViewModels\CommentsViewModels\CommentInputModel.cs" />
+    <Compile Include="ViewModels\CommentsViewModels\CommentViewModel.cs" />
+    <Compile Include="ViewModels\CommentsViewModels\PageableCommentViewModel.cs" />
     <Compile Include="ViewModels\CommonViewModels\IndustryViewModel.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -330,6 +334,8 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -383,6 +389,9 @@
     <Content Include="Views\Shared\EditorTemplates\CountryDropDown.cshtml" />
     <Content Include="Views\Home\_HomeProductPartial.cshtml" />
     <Content Include="Views\Home\_HomeProducerPartial.cshtml" />
+    <Content Include="Views\Comments\All.cshtml" />
+    <Content Include="Views\Comments\_AddCommentPartial.cshtml" />
+    <Content Include="Views\Comments\_AllCommentsPartialView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
