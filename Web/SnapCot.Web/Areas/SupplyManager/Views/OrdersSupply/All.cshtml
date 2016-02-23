@@ -1,0 +1,68 @@
+﻿@model SnapCot.Web.Areas.SupplyManager.ViewModels.PageableOrdersViewModel
+@{
+    ViewBag.Title = "All";
+}
+
+<h2>All</h2>
+
+<table>
+    <tr>
+        <th>
+            @Html.ActionLink("Order Date", "All", new { sortOrder = ViewBag.OrderDateSortParm })
+        </th>
+        <th>
+            @Html.ActionLink("Recived Date", "All", new { sortOrder = ViewBag.ReceiveDateSortParm })
+        </th>
+        <th>Approved</th>
+        <th>Active</th>
+        <th>User</th>
+        <th>Details</th>
+    </tr>
+
+    @foreach (var order in Model.Orders)
+    {
+        <tr>
+            <td>@order.OrderDate.ToString("MMMM dd, yyyy")</td>
+            <td>@order.ReceivedDate.ToString("MMMM dd, yyyy")</td>
+
+            <td>@order.IsApproved</td>
+            <td>@order.IsActive</td>
+            <td>@order.User</td>
+            <td>@Html.ActionLink("Details", "Details", "OrdersSupply", new { id = order.Id}, new { @class ="btn btn-success"})</td>
+        </tr>
+    }
+</table>
+<nav>
+    <ul class="pagination">
+
+        @if (Model.CurrentPage > 1)
+            {
+            <li>
+                <a href="/SupplyManager/OrdersSupply/All?sortOrder=@Model.SortOrder&page=@(Model.CurrentPage - 1)" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+        }
+        @for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                var className = string.Empty;
+                if (Model.CurrentPage == i)
+                {
+                    className = "active";
+                }
+
+                <li class="@className">
+                    <a href="/SupplyManager/OrdersSupply/All?sortOrder=@Model.SortOrder&page=@i">@i</a>
+                </li>
+        }
+
+        @if (Model.CurrentPage < Model.TotalPages)
+            {
+            <li>
+                <a href="/SupplyManager/OrdersSupply/All?sortOrder=@Model.SortOrder&page=@(Model.CurrentPage + 1)" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        }
+    </ul>
+</nav>

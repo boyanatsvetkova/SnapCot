@@ -39,6 +39,10 @@
                             </ul>
                         </li>                     
                     }
+                    @if (this.User.IsInRole("SupplyManager"))
+                    {
+                        <li>@Html.ActionLink("Orders", "All", "OrdersSupply", new { area = "SupplyManager" }, null)</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

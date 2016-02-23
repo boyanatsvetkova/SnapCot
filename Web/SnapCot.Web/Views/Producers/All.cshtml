@@ -33,10 +33,6 @@
             }
 
             <td>@producer.Country</td>
-            @if (this.User.Identity.IsAuthenticated)
-            {
-                <td>@Html.ActionLink("Details", "Details", "DetailProducer", new { area = "Private", id = producer.Id }, new { @class = "btn btn-success" })</td>
-            }
         </tr>
     }
 </table>

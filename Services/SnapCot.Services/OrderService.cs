@@ -5,7 +5,6 @@
     using SnapCot.Data.Repositories;
     using System.Linq;
     using Contracts;
-    using System.Collections.Generic;
 
     public class OrderService : IOrderService
     {
@@ -22,6 +21,21 @@
             this.orders.SaveChanges();
 
             return order.Id;
+        }
+
+        public IQueryable<Order> All()
+        {
+            return this.orders.All();
+        }
+
+        public IQueryable<Order> GetOrderById(int id)
+        {
+            return this.orders.All().Where(o => o.Id == id);
+        }
+
+        public void UpdateOrder(Order order)
+        {
+            this.orders.SaveChanges();
         }
     }
 }

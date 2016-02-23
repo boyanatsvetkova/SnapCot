@@ -25,6 +25,11 @@
 
         public bool IsApproved { get; set; }
 
+        public object To<T>()
+        {
+            throw new NotImplementedException();
+        }
+
         public bool IsActive { get; set; }
 
         public ShippingTerms ShippingTerms { get; set; }
