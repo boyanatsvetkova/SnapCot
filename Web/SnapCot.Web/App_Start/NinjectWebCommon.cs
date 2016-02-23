@@ -13,6 +13,8 @@ namespace SnapCot.Web.App_Start
     using Ninject.Web.Common;
     using Data;
     using Data.Repositories;
+    using Inrastructure.Cache;
+    using ForumSystem.Web.Infrastructure;
 
     public static class NinjectWebCommon 
     {
@@ -65,6 +67,10 @@ namespace SnapCot.Web.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ISnapCotDbContext>().To<SnapCotDbContext>().InRequestScope();
+
+            kernel.Bind<ICacheService>().To<HttpCacheService>();
+            kernel.Bind<ISanitizer>().To<HtmlSanitizerAdapter>();
+
             kernel.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>));
             kernel.Bind(b => b
                 .From("SnapCot.Services")

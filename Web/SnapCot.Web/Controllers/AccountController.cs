@@ -9,10 +9,7 @@
     using SnapCot.Web.ViewModels;
     using SnapCot.Data.Models;
     using SnapCot.Services.Contracts;
-    using Infrastructure.Mapping;
-    using System.Collections.Generic;
     using System;
-    using System.Globalization;
     using System.Linq;
 
     [Authorize]

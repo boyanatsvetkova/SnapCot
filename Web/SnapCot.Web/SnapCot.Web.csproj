@@ -261,6 +261,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HtmlHelpers\PaginationHelper.cs" />
+    <Compile Include="Inrastructure\Cache\HttpCacheService.cs" />
+    <Compile Include="Inrastructure\Cache\ICacheService.cs" />
     <Compile Include="Inrastructure\HtmlSanitizerAdapter.cs" />
     <Compile Include="Inrastructure\ISanitizer.cs" />
     <Compile Include="Inrastructure\Mappings\AutoMapperConfig.cs" />

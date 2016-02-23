@@ -6,9 +6,11 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Web;
     using System.Web.Mvc;
     using System.IO;
+    using Inrastructure.Cache;
+    using ForumSystem.Web.Infrastructure;
+    using Common;
 
     [Authorize]
     public class ProductsAdminController : Controller
@@ -16,15 +18,21 @@
         private IProducerService producers;
         private ICommonRepositoryService commons;
         private IProductService products;
+        private ISanitizer sanitizer;
+        private ICacheService cache;
 
         public ProductsAdminController(
             IProducerService producers,
             ICommonRepositoryService commons,
-            IProductService products)
+            IProductService products,
+            ISanitizer sanitizer,
+            ICacheService cache)
         {
             this.producers = producers;
             this.commons = commons;
             this.products = products;
+            this.sanitizer = sanitizer;
+            this.cache = cache;
         }
 
         [HttpGet]
@@ -39,6 +47,7 @@
                     IsSelected = false
                 })
                 .ToList();
+
             var model = new AddProductInputModel
             {
                 Producers = this.GetProducers(),
@@ -58,7 +67,7 @@
                 var newProduct = new Product
                 {
                     Name = model.Name,
-                    Description = model.Description,
+                    Description = this.sanitizer.Sanitize(model.Description),
                     DateAdded = DateTime.UtcNow,
                     Price = model.Price,
                     Quantity = model.Quantity,
@@ -123,14 +132,17 @@
 
         private IEnumerable<SelectListItem> GetClassifications()
         {
-            var classifications = this.commons
+            var classifications = this.cache.Get(
+                "HazardClassifications",
+                () => this.commons
                 .AllClassifications()
                 .Select(p => new SelectListItem
                 {
                     Value = p.Id.ToString(),
                     Text = p.Class
                 })
-                .ToList();
+                .ToList(),
+                GlobalConstants.UniversalCacheTime);
 
             return classifications;
         }

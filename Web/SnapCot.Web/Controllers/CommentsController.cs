@@ -8,15 +8,17 @@
     using ViewModels.CommentsViewModels;
     using Data.Models;
     using Microsoft.AspNet.Identity;
-    using HtmlHelpers;
+    using ForumSystem.Web.Infrastructure;
 
     public class CommentsController : Controller
     {
         private ICommentService comments;
+        private ISanitizer sanitizer;
 
-        public CommentsController(ICommentService comments)
+        public CommentsController(ICommentService comments, ISanitizer sanitizer)
         {
             this.comments = comments;
+            this.sanitizer = sanitizer;
         }
 
         public ActionResult All(int page = 1)
@@ -34,7 +36,7 @@
             {
                 var newComment = new Comment
                 {
-                    Content = model.Content,
+                    Content = this.sanitizer.Sanitize(model.Content),
                     CreatedOn = DateTime.UtcNow,
                     AuthorId = this.User.Identity.GetUserId()
                 };

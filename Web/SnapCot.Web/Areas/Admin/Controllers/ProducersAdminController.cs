@@ -7,17 +7,24 @@
     using Web.ViewModels.CommonViewModels;
     using Data.Models;
     using System;
+    using Inrastructure.Cache;
+    using SnapCot.Common;
 
     [Authorize]
     public class ProducersAdminController : Controller
     {
         private ICountryService countries;
         private IProducerService producers;
+        private ICacheService cache;
 
-        public ProducersAdminController(ICountryService countries, IProducerService producers)
+        public ProducersAdminController(
+            ICountryService countries, 
+            IProducerService producers,
+            ICacheService cache)
         {
             this.countries = countries;
             this.producers = producers;
+            this.cache = cache;
         }
 
         [HttpGet]
@@ -57,14 +64,17 @@
         [ChildActionOnly]
         public CountryDropDownViewModel GetCountries()
         {
-            var listCountries = this.countries
+            var listCountries = this.cache.Get(
+                "Countries",
+                () => this.countries 
                 .All()
                 .Select(c => new SelectListItem
                 {
                     Value = c.Id.ToString(),
                     Text = c.Name
                 })
-                .ToList();
+                .ToList(),
+                GlobalConstants.UniversalCacheTime);
 
             var model = new CountryDropDownViewModel
             {
