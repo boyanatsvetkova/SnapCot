@@ -14,6 +14,7 @@
         public string Name { get; set; }
 
         [Required]
+        [AllowHtml]
         [StringLength(1000, MinimumLength = 10)]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }

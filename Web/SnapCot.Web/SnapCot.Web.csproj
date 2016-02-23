@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AngleSharp, Version=0.9.4.42449, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AngleSharp.0.9.4\lib\net45\AngleSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="AutoMapper, Version=4.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\..\packages\AutoMapper.4.2.0\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
@@ -66,6 +70,10 @@
     </Reference>
     <Reference Include="Glimpse.Mvc5, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Glimpse.Mvc5.1.5.3\lib\net45\Glimpse.Mvc5.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlSanitizer, Version=3.0.0.0, Culture=neutral, PublicKeyToken=61c49a1a9e79cc28, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\HtmlSanitizer.3.1.93\lib\net45\HtmlSanitizer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Kendo.Mvc">
@@ -253,6 +261,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HtmlHelpers\PaginationHelper.cs" />
+    <Compile Include="Inrastructure\HtmlSanitizerAdapter.cs" />
+    <Compile Include="Inrastructure\ISanitizer.cs" />
     <Compile Include="Inrastructure\Mappings\AutoMapperConfig.cs" />
     <Compile Include="Inrastructure\Mappings\IHaveCustomMappings.cs" />
     <Compile Include="Inrastructure\Mappings\IMapFrom{T}.cs" />
@@ -368,6 +378,8 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -390,16 +402,6 @@
     <Content Include="Images\no_image_available.png" />
     <Content Include="Images\Backgrounds\rock-arch-860322_960_720.jpg" />
     <Content Include="Images\Backgrounds\Sunset-on-the-Superstitions.png" />
-    <Content Include="Inrastructure\404_error_page-web\web\css\style.css" />
-    <Content Include="Inrastructure\404_error_page-web\web\fonts\opensans_light_macroman\stylesheet.css" />
-    <Content Include="Inrastructure\404_error_page-web\web\fonts\opensans_regular_macroman\stylesheet.css" />
-    <Content Include="Inrastructure\404_error_page-web\web\images\bg.jpg" />
-    <Content Include="Inrastructure\404_error_page-web\web\images\bg2.png" />
-    <Content Include="Inrastructure\404_error_page-web\web\images\logo.png" />
-    <Content Include="Inrastructure\404_error_page-web\web\images\page img.png" />
-    <Content Include="Inrastructure\404_error_page-web\web\images\search.png" />
-    <Content Include="Inrastructure\404_error_page-web\web\images\signal.png" />
-    <Content Include="Inrastructure\404_error_page-web\web\index.html" />
     <Content Include="Libraries\Kendo.Mvc.dll" />
     <Content Include="Libraries\Kendo.Mvc.xml" />
     <Content Include="Scripts\bootstrap.js" />
@@ -413,12 +415,6 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\ProductsAdmin\AddProduct.cshtml" />
     <Content Include="Areas\Admin\Views\ProducersAdmin\AddProducer.cshtml" />
-    <Content Include="Inrastructure\404_error_page-web\web\fonts\opensans_light_macroman\OpenSans-Light-webfont.eot" />
-    <Content Include="Inrastructure\404_error_page-web\web\fonts\opensans_light_macroman\OpenSans-Light-webfont.ttf" />
-    <Content Include="Inrastructure\404_error_page-web\web\fonts\opensans_light_macroman\OpenSans-Light-webfont.woff" />
-    <Content Include="Inrastructure\404_error_page-web\web\fonts\opensans_regular_macroman\OpenSans-Regular-webfont.eot" />
-    <Content Include="Inrastructure\404_error_page-web\web\fonts\opensans_regular_macroman\OpenSans-Regular-webfont.ttf" />
-    <Content Include="Inrastructure\404_error_page-web\web\fonts\opensans_regular_macroman\OpenSans-Regular-webfont.woff" />
     <Content Include="Areas\SupplyManager\Views\web.config" />
     <Content Include="Areas\SupplyManager\Views\_ViewStart.cshtml" />
     <Content Include="Areas\SupplyManager\Views\Shared\_Layout.cshtml" />
@@ -443,6 +439,8 @@
     <Content Include="Content\KendoUI\images\kendoui.ttf" />
     <Content Include="Content\KendoUI\images\kendoui.woff" />
     <Content Include="Areas\Admin\Views\Industry\Index.cshtml" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -460,6 +458,8 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

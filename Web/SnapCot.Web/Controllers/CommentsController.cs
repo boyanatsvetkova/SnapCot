@@ -8,7 +8,7 @@
     using ViewModels.CommentsViewModels;
     using Data.Models;
     using Microsoft.AspNet.Identity;
-
+    using HtmlHelpers;
 
     public class CommentsController : Controller
     {

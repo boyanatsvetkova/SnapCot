@@ -5,16 +5,26 @@
     using CommonViewModels;
     using System.Collections.Generic;
     using AutoMapper;
-    using System;
     using System.ComponentModel.DataAnnotations;
+    using ForumSystem.Web.Infrastructure;
 
     public class DetailedProductViewModel : IMapFrom<Product>, IHaveCustomMappings
     {
+        ISanitizer sanitizer;
+        public DetailedProductViewModel()
+        {
+            this.sanitizer = new HtmlSanitizerAdapter();
+        }
+
         public string Id { get; set; }
 
         public string Name { get; set; }
 
         public string Description { get; set; }
+        public string SanitizedContent
+        {
+            get { return this.sanitizer.Sanitize(this.Description); }
+        }
 
         [UIHint("String")]
         public string Quantity { get; set; }
