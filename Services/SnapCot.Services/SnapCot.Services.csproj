@@ -64,12 +64,14 @@
     <Compile Include="Contracts\ICommentService.cs" />
     <Compile Include="Contracts\ICommonRepositoryService.cs" />
     <Compile Include="Contracts\ICountryService.cs" />
+    <Compile Include="Contracts\IIndustryService.cs" />
     <Compile Include="Contracts\IOrderService.cs" />
     <Compile Include="Contracts\IProducerService.cs" />
     <Compile Include="Contracts\IImageService.cs" />
     <Compile Include="Contracts\IProductService.cs" />
     <Compile Include="Contracts\ITransportModeService.cs" />
     <Compile Include="Contracts\IUserService.cs" />
+    <Compile Include="IndustryService.cs" />
     <Compile Include="OrderService.cs" />
     <Compile Include="CountryService.cs" />
     <Compile Include="ImageService.cs" />

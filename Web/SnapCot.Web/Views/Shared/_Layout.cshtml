@@ -3,9 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
+    <title>@ViewBag.Title - Snap Cot</title>
+    @Styles.Render("~/Content/css", "~/Content/kendo")
     @Styles.Render("~/Content/jqueryui")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kendo")
     @Scripts.Render("~/bundles/modernizr")
     @RenderSection("customstyles", required: false)
 </head>
@@ -36,6 +38,7 @@
                             <ul class="dropdown-menu">
                                 <li>@Html.ActionLink("Add Product", "AddProduct", "ProductsAdmin", new { area = "Admin" }, null)</li>
                                 <li>@Html.ActionLink("Add Producer", "AddProducer", "ProducersAdmin", new { area = "Admin" }, null)</li>
+                                <li>@Html.ActionLink("Common", "Index", "Industry", new { area = "Admin" }, null)</li>
                             </ul>
                         </li>                     
                     }
@@ -57,8 +60,7 @@
             <p>&copy; @DateTime.Now.Year - SnapCot</p>
         </footer>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
+ 
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/jqueryui")
     @RenderSection("scripts", required: false)

@@ -1,0 +1,28 @@
+﻿
+<h1>Industry</h1>
+
+@(Html.Kendo().Grid<SnapCot.Data.Models.Industry>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+        columns.Bound(c => c.Name);
+        columns.Command(command => { command.Edit(); }).Width(180);
+      })
+      .ToolBar(toolbar => {
+            toolbar.Create();
+      })
+      .Editable(editable => editable.Mode(GridEditMode.PopUp))
+      .Pageable()
+      .Sortable(sortable => {
+          sortable.SortMode(GridSortMode.SingleColumn);
+      })
+      .Filterable()
+      .Scrollable()
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Model(model => model.Id(p => p.Id))
+          .Read(read => read.Action("Industries_Read", "Industry"))
+          .Create(create => create.Action("Industries_Create", "Industry"))
+          .Update(update => update.Action("Industries_Update", "Industry"))
+      )
+)

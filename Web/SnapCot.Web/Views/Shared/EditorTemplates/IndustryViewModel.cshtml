@@ -1,0 +1,9 @@
+﻿@model SnapCot.Web.ViewModels.CommonViewModels.IndustryViewModel
+
+@Html.ValidationSummary("", new { @class = "text-danger" })
+<div class="form-group">
+    @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+    <div class="col-md-5">
+        @Html.EditorFor(m => m.Name, new { @class = "form-control" })
+    </div>
+</div>
