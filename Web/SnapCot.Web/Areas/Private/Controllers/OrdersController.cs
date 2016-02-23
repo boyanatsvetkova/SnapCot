@@ -5,7 +5,6 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Web;
     using System.Web.Mvc;
     using Data.Models;
 
@@ -74,9 +73,12 @@
 
                 this.items.Add(orderItems);
                 GetCart().Clear();
+
+                return Redirect("/");
             }
 
-            return Redirect("/");
+            order.Mode = this.GetTransportModes();
+            return View(order);
         }
 
         private IEnumerable<SelectListItem> GetTransportModes()

@@ -3,42 +3,136 @@
     ViewBag.Title = "AddProduct";
 }
 
-<h2>AddProduct</h2>
-@using (Html.BeginForm("AddProduct", "ProductsAdmin", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary("", new { @class = "text-danger " })
-    <br />
-    @Html.EditorFor(m => m.Name)
-    @Html.EditorFor(m => m.Description)
-    @Html.EditorFor(m => m.Price)
-    @Html.EditorFor(m => m.Quantity)
-    @Html.EnumDropDownListFor(m => m.ProductType, "Select Product Type", new { @class = "form-control" })
-    @Html.DropDownListFor(m => m.ProducerId, new SelectList(Model.Producers, "Value", "Text"), "Select Producer")
-    @Html.DropDownListFor(m => m.HazardClassificationId, new SelectList(Model.HazardClassifications, "Value", "Text"), "Select Classification")
-    for (int i = 0; i < Model.Industries.Count; i++)
-    {
-        @Html.HiddenFor(m => m.Industries[i].Id)
-        @Html.HiddenFor(m => m.Industries[i].Name)
-        @Html.CheckBoxFor(m => m.Industries[i].IsSelected);
-        @Html.LabelFor(m => m.Industries[i].IsSelected, Model.Industries[i].Name);
-    }
-    <div class="row">
-        <div class="col-md-2">
-            <strong>Image</strong>
-        </div>
-        <div class="col-md-5">
-            <input type="file" name="UploadedImage" />
-        </div>
-    </div>
-    <br />
-    <div class="row">
-        <div class="col-md-5 col-md-offset-2">
-            <input type="submit" class="btn btn-default" />
-        </div>
-    </div>
-}
+<div class="div-box-body adminarea image-size">
+    <div class="container div-box-content">
+        <h2 class="text-center">AddProduct</h2>
+        @using (Html.BeginForm("AddProduct", "ProductsAdmin", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary("", new { @class = "text-danger " })
+            <br />
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(m => m.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Product Name" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Description, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(m => m.Description, new { htmlAttributes = new { @class = "form-control", placeholder = "Description" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Price, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(m => m.Price, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Quantity, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(m => m.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ProductType, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.EnumDropDownListFor(m => m.ProductType, "Select Product Type", new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ProducerId, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.DropDownListFor(m => m.ProducerId, new SelectList(Model.Producers, "Value", "Text"), "Select Producer", new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.HazardClassificationId, new { @class = "col-md-2 control-label" })
+                                <div class="col-md-10">
+                                    @Html.DropDownListFor(m => m.HazardClassificationId, new SelectList(Model.HazardClassifications, "Value", "Text"), "Select Classification", new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    <strong>Image</strong>
+                                </div>
+                                <div class="col-md-10">
+                                    <input type="file" name="UploadedImage" />
+                                </div>
+                            </div>                         
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            @for (int i = 0; i < Model.Industries.Count; i++)
+                            {
+                                if(i % 2 == 0)
+                                {
+                                    @:<div class="row">
+                                }
 
+                                @Html.HiddenFor(m => m.Industries[i].Id)
+                                @Html.HiddenFor(m => m.Industries[i].Name)
+                                <div class="form-group">
+                                    <div class="col-md-2">
+                                        @Html.CheckBoxFor(m => m.Industries[i].IsSelected)
+                                    </div>
+                                    @Html.LabelFor(m => m.Industries[i].IsSelected, Model.Industries[i].Name, new { @class = "col-md-4 control-label" } )
+                                </div>
+
+                                if(i % 2 == 0)
+                                {
+                                    @:</div>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row text-center">
+                <div class="col-md-5 col-md-offset-2">
+                    <input type="submit" class="btn btn-default" />
+                </div>
+            </div>
+        }
+    </div>
+</div>
 @section scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

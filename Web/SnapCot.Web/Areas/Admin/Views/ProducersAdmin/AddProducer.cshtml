@@ -3,28 +3,85 @@
     ViewBag.Title = "AddProducer";
 }
 
-<h2>AddProducer</h2>
-@using (Html.BeginForm("AddProducer", "ProducersAdmin", FormMethod.Post, new { @class = "form"}))
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary("", new { @class = "text-danger " })
-    <br />
-    @Html.EditorFor(m => m.Name)
-    @Html.EditorFor(m => m.Address)
-    @Html.EditorFor(m => m.Email)
-    @Html.EditorFor(m => m.Telephone)
-    @Html.EditorFor(m => m.Website)
-    @Html.EditorFor(m => m.Country, "CountryDropDown")  
-    <br />
-    <div class="row">
-        <div class="col-md-5 col-md-offset-2">
-            <input type="submit" class="btn btn-default" value="Add Producer"/>
+<div class="div-box-body adminarea image-size">
+    <div class="container div-box-content">
+        <h2 class="text-center">AddProducer</h2>
+        @using (Html.BeginForm("AddProducer", "ProducersAdmin", FormMethod.Post, new { @class = "form"}))
+        {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary("", new { @class = "text-danger " })
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Name, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(m => m.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Name" } })
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Address, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(m => m.Address, new { htmlAttributes = new { @class = "form-control", placeholder = "Address" } })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email" } })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Telephone, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(m => m.Telephone, new { htmlAttributes = new { @class = "form-control", placeholder = "Telephone" } })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Website, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(m => m.Website, new { htmlAttributes = new { @class = "form-control", placeholder = "Website" } })
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Country, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(m => m.Country, "CountryDropDown")
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-5 col-md-offset-3">
+                <input type="submit" class="btn btn-default" value="Add Producer" />
+            </div>
+        </div>
+        }
     </div>
-}
-
-@section scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+</div>
+        @section scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        }
 
 

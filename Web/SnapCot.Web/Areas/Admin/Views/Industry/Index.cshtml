@@ -1,19 +1,22 @@
-﻿
-<h1>Industry</h1>
+﻿<div class="div-box-body adminarea image-size">
+    <div class="container div-box-content">
+        <h1 class="text-center">Industry</h1>
 
-@(Html.Kendo().Grid<SnapCot.Data.Models.Industry>()
+        @(Html.Kendo().Grid<SnapCot.Data.Models.Industry>()
       .Name("grid")
       .Columns(columns =>
       {
-        columns.Bound(c => c.Name);
-        columns.Command(command => { command.Edit(); }).Width(180);
+          columns.Bound(c => c.Name);
+          columns.Command(command => { command.Edit(); }).Width(180);
       })
-      .ToolBar(toolbar => {
-            toolbar.Create();
+      .ToolBar(toolbar =>
+      {
+          toolbar.Create();
       })
       .Editable(editable => editable.Mode(GridEditMode.PopUp))
       .Pageable()
-      .Sortable(sortable => {
+      .Sortable(sortable =>
+      {
           sortable.SortMode(GridSortMode.SingleColumn);
       })
       .Filterable()
@@ -25,4 +28,6 @@
           .Create(create => create.Action("Industries_Create", "Industry"))
           .Update(update => update.Action("Industries_Update", "Industry"))
       )
-)
+        )
+    </div>
+</div>
