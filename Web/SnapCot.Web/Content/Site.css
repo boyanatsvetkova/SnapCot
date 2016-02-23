@@ -21,6 +21,7 @@ hr {
 }
 
 .div-box-body {
+    height: 100%;
     padding-top: 40px;
     padding-bottom: 20px;
 }
@@ -30,11 +31,64 @@ hr {
     }
 
 .div-box-content {
+    height:100%;
     background: rgba(255, 255, 255, 0.5);
 }
 
-.enlarge{
-    height:100%;
+.enlarge {
+    height: 100%;
+}
+
+.title {
+    color: #fff;
+}
+
+.customform-control:-moz-placeholder {
+  color: #999999;
+}
+
+.customform-control::-moz-placeholder {
+  color: #999999;
+}
+
+.customform-control:-ms-input-placeholder {
+  color: #999999;
+}
+
+.customform-control::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.customform-control {
+    display:inline-block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.customform-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.customform-control[disabled],
+.customform-control[readonly],
+fieldset[disabled] .form-control {
+  cursor: not-allowed;
+  background-color: #eeeeee;
 }
 
 /* Set padding to keep content from hitting the edges */

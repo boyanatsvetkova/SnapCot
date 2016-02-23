@@ -1,17 +1,23 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Contact Us";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+@*<h3>@ViewBag.Message</h3>*@
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div class="div-box-body contact image-size">
+    <div class="container div-box-content">
+        <h2 class="text-center">@ViewBag.Title</h2>
+        <div class="row">
+            <div class="col-md-7">
+                <div id="map_canvas" style="width: 640px; height: 480px;"></div>
+            </div>
+            <div class="col-md-5">
+                <address>
+                    SnapCot Commercial Headquarters: <br />
+                    Downers Grove, IL, 331-777-6000<br />
+                    <abbr title="Phone">P:</abbr>
+                    For General information and pricing, please call: 331-777-6000
+                </address>
+            </div>
+        </div>
+    </div>
+</div>

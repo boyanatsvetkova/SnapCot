@@ -25,8 +25,7 @@
         {
             return this.producers
                 .All()
-                .OrderByDescending(p => p.DateAdded)
-                .Take(5);
+                .OrderByDescending(p => p.DateAdded);
         }
 
         public IQueryable<Producer> GetProducers()

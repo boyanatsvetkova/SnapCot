@@ -2,8 +2,52 @@
     background: url(../Images/Backgrounds/cactus-660180_960_720.jpg) #edc9af;
 }
 
+.products-background{
+    background-image: url(../Images/Backgrounds/desert-952519_960_720.jpg)
+}
+
 .product-details-background {
     background: url(../Images/Backgrounds/grand-canyon-844137_1920.jpg) #edc9af;
+}
+
+.home-background{
+    background: url(../Images/Backgrounds/africa-1169995_1920.jpg) 
+}
+
+.producers-background{
+    background: url(../Images/Backgrounds/late-autumn-584206_1920.jpg)
+}
+
+.comments-background{
+    background: url(../Images/Backgrounds/life-863035_1920.jpg)
+}
+
+.cart-background{
+    background: url(../Images/Backgrounds/monument-valley-53637_960_720.jpg)
+}
+
+.order-background{
+    background: url(../Images/Backgrounds/rock-arch-860322_960_720.jpg)
+}
+
+.adminarea{
+    background: url(../Images/Backgrounds/desert-landscape-1149773_960_720.jpg)
+}
+
+.supplyarea{
+    background: url(../Images/Backgrounds/horseshoe-bend-721407_960_720.jpg)
+}
+
+.about{
+    background: url(../Images/Backgrounds/Sunset-on-the-Superstitions.png)
+}
+
+.contact{
+    background: url(../Images/Backgrounds/cholla-cactus-817301_960_720.jpg)
+}
+
+.error-page{
+    background: url(../Images/Backgrounds/joshua-tree-1075725_1280.jpg)
 }
 
 .image-size{

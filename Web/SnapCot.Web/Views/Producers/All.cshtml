@@ -3,51 +3,51 @@
     ViewBag.Title = "All";
 }
 
-<h2>Producers</h2>
+<div class="div-box-body producers-background image-size">
+    <div class="container div-box-content">
+        <h2 class="text-center">Producers</h2>
+        <table class="table table-striped">
+            <tr>
+                <th class="text-center">
+                    @Html.ActionLink("Name", "All", new { sortOrder = ViewBag.NameSortParm })
+                </th>
+                <th class="text-center">
+                    Website
+                </th>
+                <th class="text-center">
+                    @Html.ActionLink("Country", "All", new { sortOrder = ViewBag.CountrySortParm })
+                </th>
+            </tr>
 
-<table>
-    <tr>
-        <th>
-            @Html.ActionLink("Name", "All", new { sortOrder = ViewBag.NameSortParm})
-        </th>
-        <th>
-            Website
-        </th>
-        <th>
-            @Html.ActionLink("Country", "All", new { sortOrder = ViewBag.CountrySortParm})
-        </th>
-        <th>Details</th>
-    </tr>
-
-    @foreach (var producer in Model.Producers)
-    {
-        <tr>
-            <td>@producer.Name</td>
-            @if (producer.Website != null)
+            @foreach (var producer in Model.Producers)
             {
-                <td>@producer.Website</td>
+                <tr>
+                    <td class="text-center">@producer.Name</td>
+                    @if (producer.Website != null)
+                    {
+                        <td class="text-center">@producer.Website</td>
+                    }
+                    else
+                    {
+                        <td class="text-center">unavailable</td>
+                    }
+
+                    <td class="text-center">@producer.Country</td>
+                </tr>
             }
-            else
-            {
-                <td>unavailable</td>
-            }
+        </table>
+        <nav class="pull-right">
+            <ul class="pagination">
 
-            <td>@producer.Country</td>
-        </tr>
-    }
-</table>
-<nav>
-    <ul class="pagination">
-
-        @if (Model.PageNumber > 1)
+                @if (Model.PageNumber > 1)
             {
-            <li>
-                <a href="/Producers/All?sortOrder=@Model.Order&page=@(Model.PageNumber - 1)" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-        }
-        @for (int i = 1; i <= Model.PageCount; i++)
+                    <li>
+                        <a href="/Producers/All?sortOrder=@Model.Order&page=@(Model.PageNumber - 1)" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                }
+                @for (int i = 1; i <= Model.PageCount; i++)
             {
                 var className = string.Empty;
                 if (Model.PageNumber == i)
@@ -58,15 +58,17 @@
                 <li class="@className">
                     <a href="/Producers/All?sortOrder=@Model.Order&page=@i">@i</a>
                 </li>
-        }
+                }
 
-        @if (Model.PageNumber < Model.PageCount)
+                @if (Model.PageNumber < Model.PageCount)
             {
-            <li>
-                <a href="/Producers/All?sortOrder=@Model.Order&page=@(Model.PageNumber + 1)" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-        }
-    </ul>
-</nav>
+                    <li>
+                        <a href="/Producers/All?sortOrder=@Model.Order&page=@(Model.PageNumber + 1)" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
+</div>

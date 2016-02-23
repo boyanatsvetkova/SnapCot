@@ -9,6 +9,7 @@
     using Data.Models;
     using Microsoft.AspNet.Identity;
 
+
     public class CommentsController : Controller
     {
         private ICommentService comments;
@@ -38,8 +39,7 @@
                     AuthorId = this.User.Identity.GetUserId()
                 };
 
-                this.comments.Add(newComment);
-             
+                this.comments.Add(newComment);             
             }
 
             return this.PartialView("_AllCommentsPartialView", this.GetComments());

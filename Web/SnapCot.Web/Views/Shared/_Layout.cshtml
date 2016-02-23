@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Snap Cot</title>
     @Styles.Render("~/Content/css", "~/Content/kendo")
+    @Styles.Render("~/Content/background")
     @Styles.Render("~/Content/jqueryui")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/kendo")
@@ -25,7 +26,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = string.Empty}, null)</li>
+                    <li>
+                        <a href="@Url.Action("Index", "Home", new { area = string.Empty})">
+                            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                        </a>
+                    </li>
+                    @*<li>@Html.ActionLink("Home", "Index", "Home", new { area = string.Empty}, null)</li>*@
                     <li>@Html.ActionLink("Products", "All", "Products", new { area = string.Empty }, null)</li>
                     <li>@Html.ActionLink("Producers", "All", "Producers", new { area = string.Empty }, null)</li>
                     <li>@Html.ActionLink("Comments", "All", "Comments", new { area = string.Empty }, null)</li>
@@ -40,7 +46,7 @@
                                 <li>@Html.ActionLink("Add Producer", "AddProducer", "ProducersAdmin", new { area = "Admin" }, null)</li>
                                 <li>@Html.ActionLink("Common", "Index", "Industry", new { area = "Admin" }, null)</li>
                             </ul>
-                        </li>                     
+                        </li>
                     }
                     @if (this.User.IsInRole("SupplyManager"))
                     {
@@ -60,9 +66,32 @@
             <p>&copy; @DateTime.Now.Year - SnapCot</p>
         </footer>
     </div>
- 
+
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/jqueryui")
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            initialize();
+        });
+        function initialize() {
+            var mapOptions = {
+                center: new google.maps.LatLng(42.70, 23.30),
+                zoom: 10,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map_canvas"),
+              mapOptions);
+            // create a marker
+            var latlng = new google.maps.LatLng(42.70, 23.30);
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+                title: 'My Place'
+            });
+        }
+    </script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

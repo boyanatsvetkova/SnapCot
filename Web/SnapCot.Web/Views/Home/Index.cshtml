@@ -2,17 +2,22 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Dream of the Future Today</h1>
-</div>
+<div class="div-box-body home-background image-size">
+    <div class="container div-box-content">
+        <div>
+            <h1 class="title text-center">Dream of the Future Today</h1>
+        </div>
 
-<div class="row">
-    <div class="col-md-6">
-        <h2>New Products</h2>
-        @Html.Action("NewProducts", "Home")
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center">New Products</h2>
+                @Html.Action("NewProducts", "Home")
+            </div>
+            <div class="col-md-6">
+                <h2 class="text-center">New Producers</h2>
+                @Html.Action("NewProducers", "Home")
+            </div>
+        </div>
     </div>
-    <div class="col-md-6">
-        <h2>New Producers</h2>   
-        @Html.Action("NewProducers", "Home")   
-    </div>   
 </div>

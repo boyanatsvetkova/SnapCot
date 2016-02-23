@@ -8,13 +8,18 @@
 {
     <div class="alert alert-success">@this.TempData["Notification"]</div>
 }
+<div class="div-box-body comments-background image-size">
+    <div class="container div-box-content">
+        <h2 class="text-center">Comments</h2>
 
-@Html.Partial("_AllCommentsPartialView", Model)
+        @Html.Partial("_AllCommentsPartialView", Model)
 
-@if (this.User.Identity.IsAuthenticated)
-{
-    @Html.Partial("_AddCommentPartial", new CommentInputModel())
-}
+        @if (this.User.Identity.IsAuthenticated)
+        {
+            @Html.Partial("_AddCommentPartial", new CommentInputModel())
+        }
+    </div>
+</div>
 
 @section scripts{
     @Scripts.Render("~/bundles/jqueryajax")

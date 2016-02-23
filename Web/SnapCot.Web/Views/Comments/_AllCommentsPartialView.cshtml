@@ -1,58 +1,82 @@
 ﻿@model SnapCot.Web.ViewModels.CommentsViewModels.PageableCommentViewModel
-<div class="row">
-    <h2>Comments</h2>
-    <div class="col-md-8" id="comments">
-        @if (Model.Comments != null && Model.Comments.Count() == 0)
-        {
-            <h3>No Comments Yet</h3>
-        }
-        else
-        {
-            foreach (var item in Model.Comments)
-            {
-                <h3>@item.Author</h3>
-                <span>@item.CreatedOn</span>
-                <p>@Html.Raw(item.Content)</p>
 
-                if (this.User.Identity.IsAuthenticated && this.User.IsInRole("Admin"))
-                {
-                    @Html.ActionLink("Delete", "DeleteComment", "Comments", new { item.Id }, new { @class = "btn btn-success" })
-                }
+<div id="comments">
+    <div class="row">
+        <div class="col-md-12">
+            @*@{int index = 0;}*@
+
+            @if (Model.Comments != null && Model.Comments.Count() == 0)
+            {
+                <h3>No Comments Yet</h3>
             }
-        }
-        <nav>
-            <ul class="pagination">
-
-                @if (Model.CurrentPage > 1)
+            else
             {
-                    <li>
-                        <a href="/Comments/All?page=@(Model.CurrentPage - 1)" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                }
-                @for (int i = 1; i <= Model.TotalPages; i++)
-            {
-                var className = string.Empty;
-                if (Model.CurrentPage == i)
+                <div class="col-md-12">
+                    @foreach (var item in Model.Comments)
                 {
-                    className = "active";
-                }
+                        @*index++;
+                            if (index % 4 == 0)
+                                {
+                                    <div class="row">
+                                }*@
 
-                <li class="@className">
-                    <a href="/Comments/All?page=@i">@i</a>
-                </li>
-                }
+                        <div class="col-md-4">
+                            <h3 class="kbd">@item.Author</h3>
+                            <span>@item.CreatedOn</span>
+                            <p class="lead">@Html.Raw(item.Content)</p>
 
-                @if (Model.CurrentPage < Model.TotalPages)
-            {
-                    <li>
-                        <a href="/Comments/All?page=@(Model.CurrentPage + 1)" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                }
-            </ul>
-        </nav>
+                            @if (this.User.Identity.IsAuthenticated && this.User.IsInRole("Admin"))
+                            {
+                                @Html.ActionLink("Delete", "DeleteComment", "Comments", new { item.Id }, new { @class = "btn btn-success" })
+                            }
+                        </div>
+
+                        @*@if (index % 4 == 0)
+                            {
+                                </div>
+                            }*@
+                    }
+                </div>
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="col-md-12">
+                <ul class="pagination">
+
+                    @if (Model.CurrentPage > 1)
+                    {
+                        <li>
+                            <a href="/Comments/All?page=@(Model.CurrentPage - 1)" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    }
+                    @for (int i = 1; i <= Model.TotalPages; i++)
+                    {
+                        var className = string.Empty;
+                        if (Model.CurrentPage == i)
+                        {
+                            className = "active";
+                        }
+
+                        <li class="@className">
+                            <a href="/Comments/All?page=@i">@i</a>
+                        </li>
+                    }
+
+                    @if (Model.CurrentPage < Model.TotalPages)
+                    {
+                        <li>
+                            <a href="/Comments/All?page=@(Model.CurrentPage + 1)" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+
+        </div>
     </div>
 </div>

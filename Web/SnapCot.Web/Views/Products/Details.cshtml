@@ -10,52 +10,68 @@
 
 <div class="div-box-body product-details-background image-size enlarge">
     <div class="container div-box-content">
-        <h2>Product Details</h2>
-            @*@Html.ValidationSummary("", new { @class = "text-danger " })*@
-            @if (this.TempData["Notification"] != null)
+        <h2 class="text-center">Product Details</h2>
+        @*@Html.ValidationSummary("", new { @class = "text-danger " })*@
+        @if (this.TempData["Notification"] != null)
             {
-                <div class="alert alert-success">@this.TempData["Notification"]</div>
-            }
-            <div class="image-position">
-                <img src="@Url.Action("Image", "Products", new { id = Model.ImageId })" class="image-details" alt="@Model.Name" />
-            </div>
-            <div class="text-position">
-                <h1>
-                    @Html.DisplayFor(m => Model.Name)
-                </h1>
-                <p>
-                    @Html.Raw(Model.Description)
-                </p>
-                <p>
-                    @Html.DisplayFor(m => Model.Price)
-                </p>
-                <p>
-                <p>
-                    @Html.DisplayFor(m => Model.Quantity)
-                </p>
-                <p>
-                    @Html.DisplayFor(m => Model.Type)
-                </p>
-                <p>
-                    @Html.DisplayFor(m => Model.Classification)
-                </p>
-                <p>
-                    @Html.DisplayFor(m => Model.Producer)
-                </p>
-            </div>
-            <div>
+            <div class="alert alert-success">@this.TempData["Notification"]</div>
+        }
+        <div class="col-md-4 img-container portrait">
+            <img src="@Url.Action("Image", "Products", new { id = Model.ImageId })" class="image-container" alt="@Model.Name" />
+        </div>
+        <div class="col-md-8">
+            <h1>
+                @Html.DisplayFor(m => Model.Name)
+            </h1>
+            <p>
+                @Html.Raw(Model.Description)
+            </p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Quantity</th>
+                        <th class="text-center">Type</th>
+                        <th class="text-center">Class</th>
+                        <th class="text-center">Producer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-center">
+                            @Html.DisplayFor(m => Model.Price)
+                        </td>
+                        <td class="text-center">
+                            @Html.DisplayFor(m => Model.Quantity) <strong>Units</strong>
+                        </td>
+                        <td class="text-center">
+                            @Html.DisplayFor(m => Model.Type)
+                        </td>
+                        <td class="text-center">
+                            @Html.DisplayFor(m => Model.Classification)
+                        </td>
+                        <td class="text-center">
+                            @Html.DisplayFor(m => Model.Producer)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="col-md-12">
+                <h4>Industries</h4>
                 <ul>
                     @foreach (var industry in Model.Industry)
                     {
                         <li>@industry.Name</li>
                     }
                 </ul>
+                @if (this.User.Identity.IsAuthenticated)
+                {
+                    @Html.Action("GetAddProductView", new { id = Model.Id })
+
+                }
             </div>
-            @if (this.User.Identity.IsAuthenticated)
-            {
-                @Html.Action("GetAddProductView", new { id = Model.Id })
-            }
         </div>
+    </div>
 </div>
 
 @section Scripts {
