@@ -252,6 +252,7 @@
     <Compile Include="Areas\SupplyManager\ViewModels\PageableOrdersViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="App_Start\GlimpseSecurityPolicy.cs" />
@@ -513,6 +514,9 @@
     <Content Include="Views\Comments\_AllCommentsPartialView.cshtml" />
     <Content Include="Views\Producers\All.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\IndustryViewModel.cshtml" />
+    <Content Include="Views\Error\Error404.cshtml" />
+    <Content Include="Views\Error\Error500.cshtml" />
+    <Content Include="Views\Error\Error400.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

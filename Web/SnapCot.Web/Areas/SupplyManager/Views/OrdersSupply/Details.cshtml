@@ -3,17 +3,30 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-<h2>Order number - @Model.Id</h2>
-<p>Total Price: @Model.TotalPrice</p>
-<p>Cerdit Limit: @Model.CreditLimit</p>
-<p>Order Date: @Model.OrderDate.ToString("MMMM dd, yyyy")</p>
-<p>Receive Date: @Model.ReceivedDate.ToString("MMMM dd, yyyy")</p>
-<p>Shipping Terms: @Model.ShippingTerms</p>
-<p>Transport Mode: @Model.TransportMode</p>
-<p>User: @Model.User</p>
-<p>Active: @Model.IsActive</p>
-<p>Approved: @Model.IsApproved</p>
+<div class="div-box-body supplyarea image-size">
+    <div class="container div-box-content">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="text-center">Details</h2>
+                <h2 class="text-center">Order number - @Model.Id</h2>
+                <p class="text-center">Total Price: <strong class="text-danger">$@Model.TotalPrice</strong></p>
+                <p class="text-center">Credit Limit: <strong class="text-danger">$@Model.CreditLimit</strong></p>
+                <p class="text-center">Order Date: <strong>@Model.OrderDate.ToString("MMMM dd, yyyy")</strong></p>
+                <p class="text-center">Receive Date: <strong>@Model.ReceivedDate.ToString("MMMM dd, yyyy")</strong></p>
+                <p class="text-center">Shipping Terms: <strong>@Model.ShippingTerms</strong></p>
+                <p class="text-center">Transport Mode: <strong>@Model.TransportMode</strong></p>
+                <p class="text-center">User: <strong>@Model.User</strong></p>
+                <p class="text-center">Active: <strong>@Model.IsActive</strong></p>
+                <p class="text-center">Approved: <strong>@Model.IsApproved</strong></p>
+            </div>
+        </div>
 
-@Html.ActionLink("Back", "All", "OrdersSupply", new { sortOrder = string.Empty }, new { @class = "btn btn-success" })
-@Html.ActionLink("Approve", "Approve", "OrdersSupply", new  { id = Model.Id}, new { @class = "btn btn-success" })
+        <div class="row">
+            <div class="col-md-12 text-center">
+                @Html.ActionLink("Back", "All", "OrdersSupply", new { sortOrder = string.Empty }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Approve", "Approve", "OrdersSupply", new { id = Model.Id }, new { @class = "btn btn-success" })
+            </div>           
+        </div>
+
+    </div>
+</div>
