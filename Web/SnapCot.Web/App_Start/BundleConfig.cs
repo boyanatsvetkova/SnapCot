@@ -45,6 +45,13 @@
 
             bundles.Add(new StyleBundle("~/Content/jqueryui")
                .Include("~/Content/themes/base/all.css"));
+
+            bundles.Add(new StyleBundle("~/Inrastructure/notification")
+              .Include("~/Inrastructure/css/notifier.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/notification")
+             .Include("~/Inrastructure/js/jquery-2.1.1.min.js",
+                      "~/Inrastructure/js/notifier.js"));
         }
     }
 }

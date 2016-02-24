@@ -17,7 +17,7 @@
             this.producers = producers;
         }
 
-        public ActionResult All(string sortOrder, int page = GlobalConstants.DefaultPageSize)
+        public ActionResult All(string sortOrder, int page = GlobalConstants.DefaultPage)
         {
             ViewBag.NameSortParm = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.CountrySortParm = sortOrder == "Country" ? "country_desc" : "Country";

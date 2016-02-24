@@ -271,6 +271,12 @@
     <Compile Include="Inrastructure\Mappings\IMapFrom{T}.cs" />
     <Compile Include="Inrastructure\Mappings\IMapTo{T}.cs" />
     <Compile Include="Inrastructure\Mappings\QueryableExtensions.cs" />
+    <Compile Include="Inrastructure\Notifier\Enums\NotificationType.cs" />
+    <Compile Include="Inrastructure\Notifier\Notification.cs" />
+    <Compile Include="Inrastructure\Notifier\Notifier.ascx.cs">
+      <DependentUpon>Notifier.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="ViewModels\CommentsViewModels\CommentInputModel.cs" />
     <Compile Include="ViewModels\CommentsViewModels\CommentViewModel.cs" />
@@ -405,6 +411,10 @@
     <Content Include="Images\no_image_available.png" />
     <Content Include="Images\Backgrounds\rock-arch-860322_960_720.jpg" />
     <Content Include="Images\Backgrounds\Sunset-on-the-Superstitions.png" />
+    <Content Include="Inrastructure\Notifier\css\notifier.css" />
+    <Content Include="Inrastructure\Notifier\js\jquery-2.1.1.min.js" />
+    <Content Include="Inrastructure\Notifier\js\notifier.js" />
+    <Content Include="Inrastructure\Notifier\Notifier.ascx" />
     <Content Include="Libraries\Kendo.Mvc.dll" />
     <Content Include="Libraries\Kendo.Mvc.xml" />
     <Content Include="Scripts\bootstrap.js" />

@@ -10,6 +10,7 @@
     using Microsoft.AspNet.Identity;
     using ForumSystem.Web.Infrastructure;
     using Common;
+    using CrossJob.Controls.Notifier;
 
     public class CommentsController : Controller
     {
@@ -22,7 +23,7 @@
             this.sanitizer = sanitizer;
         }
 
-        public ActionResult All(int page = GlobalConstants.DefaultPageSize)
+        public ActionResult All(int page = GlobalConstants.DefaultPage)
         {
             var model = this.GetComments(page);
             return View(model);
@@ -55,12 +56,13 @@
             {
                 this.comments.DeleteComment(comment);
                 this.TempData["Notification"] = "Comment deleted successfully!";
+                //Notifier.Success("Comment deleted successfully!");
             }
 
             return RedirectToAction("All");
         }
 
-        private PageableCommentViewModel GetComments(int page = GlobalConstants.DefaultPageSize)
+        private PageableCommentViewModel GetComments(int page = GlobalConstants.DefaultPage)
         {
             var allItemsCount = this.comments.All().Count();
             var totalPages = (int)Math.Ceiling(allItemsCount / (decimal)GlobalConstants.CommentsPerPage);
