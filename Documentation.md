@@ -36,9 +36,9 @@ The **supply manager** is in charge of approving or rejecting each order made by
 
 ##ASP.NET MVC 5 application powered by:
 
-ASP.NET MVC
-Microsoft SQL Server
-Ninject - Dependency injector for .NET
+1.ASP.NET MVC
+2.Microsoft SQL Server
+3.Ninject - Dependency injector for .NET
 Automapper - A convention-based object-object mapper
 Twitter Bootstrap - For responsive design
 jQuery
