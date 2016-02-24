@@ -1,8 +1,8 @@
 ﻿namespace SnapCot.Web.App_Start
 {
+    using System.Data.Entity;
     using SnapCot.Data;
     using SnapCot.Data.Migrations;
-    using System.Data.Entity;
 
     public class DatabaseConfig
     {

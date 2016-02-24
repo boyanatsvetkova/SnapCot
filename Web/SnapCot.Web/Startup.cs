@@ -2,6 +2,7 @@
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(SnapCot.Web.Startup))]
+
 namespace SnapCot.Web
 {
     public partial class Startup

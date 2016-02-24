@@ -5,7 +5,6 @@
     using SnapCot.Services.Contracts;
     using SnapCot.Data.Repositories;
     using Common;
-    using System;
 
     public class ProductService : IProductService
     {
