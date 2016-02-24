@@ -10,6 +10,7 @@
     {
         public static IQueryable<TDestination> To<TDestination>(this IQueryable source, params Expression<Func<TDestination, object>>[] membersToExpand)
         {
+            //Mapper.Map<Source, Destination>(source, destination);
             return source.ProjectTo(AutoMapperConfig.Configuration, membersToExpand);
         }
     }

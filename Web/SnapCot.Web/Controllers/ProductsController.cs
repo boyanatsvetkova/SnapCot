@@ -10,6 +10,7 @@
     using Infrastructure.Mapping;
     using ViewModels.Paging;
     using ViewModels.ProducerViewModels;
+    using System.Net;
 
     public class ProductsController : Controller
     {
@@ -124,7 +125,7 @@
             var image = this.images.GetById(id);
             if (image == null)
             {
-                throw new HttpException(404, "Image not found");
+                return new HttpStatusCodeResult(HttpStatusCode.NotFound, "Image not found");
             }
 
             return File(image.Content, "image/" + image.FileExtension);

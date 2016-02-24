@@ -1,12 +1,8 @@
 ﻿namespace SnapCot.Web.ViewModels.ProductViewModels
 {
     using Paging;
-    using ProducerViewModels;
-    using Infrastructure.Mapping;
     using System.Collections.Generic;
     using System.Web.Mvc;
-    using AutoMapper;
-    using System;
 
     public class AllPagedProductsViewModel
     {

@@ -21,7 +21,6 @@
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             var autoMapperConfig = new AutoMapperConfig();
-            // May cause problem???
             autoMapperConfig.Execute(Assembly.GetExecutingAssembly());
         }
     }
