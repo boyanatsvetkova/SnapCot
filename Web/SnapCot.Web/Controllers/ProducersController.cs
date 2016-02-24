@@ -6,7 +6,7 @@
     using System.Linq;
     using System.Web.Mvc;
     using Infrastructure.Mapping;
-    using PagedList;
+    using Common;
 
     public class ProducersController : Controller
     {
@@ -17,7 +17,7 @@
             this.producers = producers;
         }
 
-        public ActionResult All(string sortOrder, int page = 1)
+        public ActionResult All(string sortOrder, int page = GlobalConstants.DefaultPageSize)
         {
             ViewBag.NameSortParm = string.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewBag.CountrySortParm = sortOrder == "Country" ? "country_desc" : "Country";
@@ -40,11 +40,11 @@
             }
 
             var allProducers = producers
-                .Skip((page - 1) * 5)
-                .Take(5)
+                .Skip((page - 1) * GlobalConstants.ProducersPerPage)
+                .Take(GlobalConstants.ProducersPerPage)
                 .To<ProducerViewModel>()
                 .ToList();
-            var totalPages = (int)Math.Ceiling(producers.Count() / 5M);
+            var totalPages = (int)Math.Ceiling(producers.Count() / (decimal)GlobalConstants.ProducersPerPage);
             var model = new PagedProducersViewModel
             {
                 PageCount = totalPages,

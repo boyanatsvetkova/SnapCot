@@ -9,6 +9,7 @@
     using Data.Models;
     using Microsoft.AspNet.Identity;
     using ForumSystem.Web.Infrastructure;
+    using Common;
 
     public class CommentsController : Controller
     {
@@ -21,7 +22,7 @@
             this.sanitizer = sanitizer;
         }
 
-        public ActionResult All(int page = 1)
+        public ActionResult All(int page = GlobalConstants.DefaultPageSize)
         {
             var model = this.GetComments(page);
             return View(model);
@@ -59,10 +60,10 @@
             return RedirectToAction("All");
         }
 
-        private PageableCommentViewModel GetComments(int page = 1)
+        private PageableCommentViewModel GetComments(int page = GlobalConstants.DefaultPageSize)
         {
             var allItemsCount = this.comments.All().Count();
-            var totalPages = (int)Math.Ceiling(allItemsCount / 5M);
+            var totalPages = (int)Math.Ceiling(allItemsCount / (decimal)GlobalConstants.CommentsPerPage);
             var comments = this.comments
                 .All(page)
                 .To<CommentViewModel>()

@@ -7,7 +7,6 @@
     using Common;
     using System.IO;
     using System.Reflection;
-    using Data.DataSeed;
     using Services.Contracts;
     using Moq;
 
@@ -19,12 +18,6 @@
             var files = Directory.GetFiles(directory + "/Images/", "*.*");
 
             var byteArray = File.ReadAllBytes(files[0]);
-            //var image = new Image
-            //{
-            //    Id = 1,
-            //    Content = byteArray,
-            //    FileExtension = files[0].Substring(files[0].LastIndexOf(".") + 1)
-            //};
 
             return byteArray;
         }

@@ -9,6 +9,7 @@
     public class CommentViewModel : IMapFrom<Comment>, IHaveCustomMappings
     {
         ISanitizer sanitizer;
+
         public CommentViewModel()
         {
             this.sanitizer = new HtmlSanitizerAdapter();

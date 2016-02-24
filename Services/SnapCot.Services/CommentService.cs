@@ -5,6 +5,7 @@
     using SnapCot.Services.Contracts;
     using System.Linq;
     using System;
+    using Common;
 
     public class CommentService : ICommentService
     {
@@ -31,8 +32,8 @@
             return this.comments
                .All()
                .OrderByDescending(c => c.CreatedOn)
-               .Skip((page - 1) * 5)
-               .Take(5);
+               .Skip((page - 1) * GlobalConstants.CommentsPerPage)
+               .Take(GlobalConstants.CommentsPerPage);
         }
 
         public void DeleteComment(Comment comment)
