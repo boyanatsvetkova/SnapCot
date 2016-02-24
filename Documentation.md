@@ -12,9 +12,9 @@ Each user of the site can register by assigning themselves a credit limit of tot
 
 The application has:
 
-1.**Public part** (accessible without authentication)
-2.**Private part** (available for registered users)
-3**Administrative** part (available for administrators only)
+1. **Public part** (accessible without authentication)
+2. **Private part** (available for registered users)
+3. **Administrative** part (available for administrators only)
 
 ###Public Part
 
@@ -26,7 +26,7 @@ Comments related to the company's performance among its various users can be rea
 
 All registered users in the site cab by products an make orders to the company. Each user is provided with a shopping cart where a variety of products can be bought at a later stage. The user is entitled to a specific quantity for each product available.
 
-Administration Part
+###Administration Part
 
 Administrator of the website are the supply manager and the head administrator. 
 
@@ -36,16 +36,16 @@ The **supply manager** is in charge of approving or rejecting each order made by
 
 ##ASP.NET MVC 5 application powered by:
 
-1.ASP.NET MVC
-2.Microsoft SQL Server
-3.Ninject - Dependency injector for .NET
-Automapper - A convention-based object-object mapper
-Twitter Bootstrap - For responsive design
-jQuery
-jQuery.Validation - Client site validation
-jQuery.Unobtrusive.Ajax - For Ajax requests
-Kendo UI for ASP.NET MVC - Generating UI
-HtmlSanitizer - Avoiding XSS attacks
-FluentMvcTesting - For unit testing the controllers
-Moq - Mocking objects by unit-testing
-Usage of Kendo UI for ASP.NET MVC
+1. ASP.NET MVC
+2. Microsoft SQL Server
+3. Ninject - Dependency injector for .NET
+4. Automapper - A convention-based object-object mapper
+5. Twitter Bootstrap - For responsive design
+6. jQuery
+7. jQuery.Validation - Client site validation
+8. jQuery.Unobtrusive.Ajax - For Ajax requests
+9. Kendo UI for ASP.NET MVC - Generating UI
+10. HtmlSanitizer - Avoiding XSS attacks
+11. FluentMvcTesting - For unit testing the controllers
+12. Moq - Mocking objects by unit-testing
+13. Usage of Kendo UI for ASP.NET MVC
