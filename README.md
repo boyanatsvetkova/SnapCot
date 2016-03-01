@@ -1,8 +1,6 @@
 # SnapCot
 Final Telerik Academy ASP.NET MVC 5 Project
 
-This document describes the **final project assignment** for the **ASP.NET MVC** course at Telerik Academy.
-
 ## Project Description
 
 Design and implement an **ASP.NET MVC application**. It can be a discussion forum, blog system, e-commerce site, online gaming site, social network, or any other web application by your choice.
