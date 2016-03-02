@@ -435,28 +435,32 @@
                      Address = "Binhai Economic Development Zone, Weifang, Shandong 62737",
                      Telephone = "86-536-8309826",
                      Website = "www.bro-chem.com",
-                     Email = "qiangyuan@gmail.com"
+                     Email = "qiangyuan@gmail.com",
+                     DateAdded = DateTime.Now
                 },
                 new Producer()
                 {
                      Name = "WEIFANG HONGYUAN CHEMICAL CO., LTD",
                      Address = "XINXING INDUSTRIAL PARK,DAJIAWA SUB-DISTRICT OFFICE,COASTAL ECONOMIC DEVELOPMENT ZONE,WEIFANG CITY",
                      Telephone = "+86-536-8897257",
-                     Email = "hongyuan@gmail.com"
+                     Email = "hongyuan@gmail.com",
+                     DateAdded = DateTime.Now
                 },
                   new Producer()
                 {
                      Name = "Saboo Sodium Chloro Ltd.",
                      Address = "Surya House, L-5, B-ll, Krishna Marg, C Scheme, Ashok Nagar, Jaipur- 302 001 Rajasthan",
                      Telephone = "+86-536-8897257",
-                     Email = "hongyuan@gmail.com"
+                     Email = "hongyuan@gmail.com",
+                     DateAdded = DateTime.Now
                 },
                 new Producer()
                 {
                      Name = "Fineton Industrial Minerals Limited",
                      Address = "No. 11, 3/F., International Trade Centre, 11-19 Sha Tsui Road, Tsuen Wan, N. T.",
                      Telephone = "(852) 2402-1782",
-                     Email = "ericlo@fineton.com"
+                     Email = "ericlo@fineton.com",
+                     DateAdded = DateTime.Now
                 },
                 new Producer()
                 {
@@ -464,7 +468,8 @@
                      Address = "Plot No. 1003/4, Phase – IV,G.I.D.C. Estate, Naroda",
                      Telephone = "091-79-2281 3294",
                      Email = "info@jayminerals.com",
-                     Website = "www.jayminerals.com"
+                     Website = "www.jayminerals.com",
+                     DateAdded = DateTime.Now
                 },
                 new Producer()
                 {
@@ -472,7 +477,8 @@
                      Address = "20121, Harinagar Co. Op. Society, Gotri Road, Earoda'390 007",
                      Telephone = "91 265 2397013",
                      Email = "info@kutch.com",
-                     Website = "www.kcil.co.in"
+                     Website = "www.kcil.co.in",
+                     DateAdded = DateTime.Now
                 },
                  new Producer()
                 {
@@ -480,6 +486,7 @@
                      Address = "555/1, Energy Complex Building A, 15th Floor, Vibhavadi Rangsit Road, Chatuchak, Bangkok 10900",
                      Telephone = "91 265 2397013",
                      Email = "info@glycol.com",
+                     DateAdded = DateTime.Now
                 },
                 new Producer()
                 {
@@ -487,7 +494,8 @@
                      Address = "Perkantoran Permata Senayan D-35, Jl. Tentara Pelajar, Jakarta-12210",
                      Telephone = "(62-21) 5794 0809",
                      Email = "contact@timuraya.com",
-                     Website = "www.timuraya.com"
+                     Website = "www.timuraya.com",
+                     DateAdded = DateTime.Now
                 },
                 new Producer()
                 {
@@ -495,6 +503,7 @@
                      Address = "Route de Mothern, Zone Portuaire FR-67630 L Lauterbourg",
                      Telephone = "+33 3 8854 9850",
                      Email = "contact@kemira.com",
+                     DateAdded = DateTime.Now
                 },
                 new Producer()
                 {
@@ -502,7 +511,8 @@
                      Address = "VASUNDHAR, SARAOGIAN STREET, BEAWAR – 305901, RAJASTHAN",
                      Telephone = "+91-1462-258850",
                      Email = "info@shrigandhar.com",
-                     Website = "www.shrigandhar.com"
+                     Website = "www.shrigandhar.com",
+                     DateAdded = DateTime.Now
                 },
                 new Producer()
                 {
@@ -510,6 +520,7 @@
                      Address = "Via S. Cassiano 99 - San Martino, 28069 Trecate",
                      Telephone = "+39 0321 7901",
                      Email = "esseco@esseco.it",
+                     DateAdded = DateTime.Now
                 }
             };
 
