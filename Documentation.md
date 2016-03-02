@@ -15,6 +15,7 @@ The application has:
 1. **Public part** (accessible without authentication)
 2. **Private part** (available for registered users)
 3. **Administrative** part (available for administrators only)
+4. **Supply Manager** part (available only for the supply manager of the company)
 
 ###Public Part
 
